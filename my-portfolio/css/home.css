@@ -1,0 +1,816 @@
+/* ============================================
+   GLOBAL RESET & BASE STYLES
+   Removes default margins, paddings, and sets box-sizing
+============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================================
+   CSS VARIABLES (THEME SYSTEM)
+   --theme-* variables change dynamically with body class
+   This is the core of theme switching
+============================================ */
+:root {
+  /* Default Theme: Space / Night */
+  --font-display: 'Outfit', sans-serif;
+  /* Bold, modern font for headings */
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  /* Clean font for body text */
+
+  /* Theme Colors */
+  --theme-accent: #4f8fff;
+  /* Primary accent color (blue) */
+  --theme-accent-2: #a78bfa;
+  /* Secondary accent (purple) */
+  --theme-glow: rgba(79, 143, 255, 0.45);
+  /* Glow effect color */
+  --theme-glow-soft: rgba(79, 143, 255, 0.2);
+  --theme-border: rgba(79, 143, 255, 0.35);
+  /* Border color */
+  --theme-bg-glass: rgba(8, 12, 30, 0.65);
+  /* Glass background for navbar */
+  --theme-text: #e8eeff;
+  /* Main text color */
+  --theme-text-muted: #8b9bbf;
+  /* Muted/secondary text */
+  --transition: 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+/* RAIN THEME Overrides */
+body.rain {
+  --theme-accent: #60b0ff;
+  --theme-accent-2: #93c5fd;
+  --theme-glow: rgba(96, 176, 255, 0.5);
+  --theme-border: rgba(96, 176, 255, 0.4);
+  --theme-bg-glass: rgba(4, 18, 40, 0.68);
+  --theme-text: #ddeeff;
+  --theme-text-muted: #7aaac8;
+}
+
+/* SNOW THEME Overrides */
+body.snow {
+  --theme-accent: #c7deff;
+  --theme-accent-2: #ffffff;
+  --theme-glow: rgba(200, 220, 255, 0.55);
+  --theme-border: rgba(200, 220, 255, 0.45);
+  --theme-bg-glass: rgba(20, 30, 55, 0.6);
+  --theme-text: #eef4ff;
+  --theme-text-muted: #a0b8d8;
+  
+}
+
+/* SUNNY THEME Overrides */
+body.sun {
+  --theme-accent: #ffb347;
+  --theme-accent-2: #ff7f00;
+  --theme-glow: rgba(255, 160, 60, 0.55);
+  --theme-border: rgba(255, 160, 60, 0.45);
+  --theme-bg-glass: rgba(40, 18, 4, 0.65);
+  --theme-text: #fff3e0;
+  --theme-text-muted: #e0b080;
+}
+
+/* FOREST THEME Overrides */
+body.forest {
+  --theme-accent: #4caf50;
+  --theme-accent-2: #81c784;
+  --theme-glow: rgba(76, 175, 80, 0.5);
+  --theme-border: rgba(76, 175, 80, 0.4);
+  --theme-bg-glass: rgba(10, 30, 15, 0.65);
+  --theme-text: #e8f5e9;
+  --theme-text-muted: #b9f6ca;
+}
+
+/* AURORA THEME Overrides */
+body.aurora {
+  --theme-accent: #e040fb;
+  --theme-accent-2: #ce93d8;
+  --theme-glow: rgba(224, 64, 251, 0.5);
+  --theme-border: rgba(224, 64, 251, 0.4);
+  --theme-bg-glass: rgba(30, 10, 40, 0.68);
+  --theme-text: #f3e5f5;
+  --theme-text-muted: #e1bee7;
+}
+
+/* ============================================
+   BACKGROUND LAYER SYSTEM
+   Fixed backgrounds that change with theme
+============================================ */
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  /* Top, Right, Bottom, Left = 0 */
+  z-index: 0;
+  transition: opacity 0.5s ease;
+}
+
+.bg-layer img,
+.bg-layer video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures image covers entire area */
+}
+
+/* Dark overlay on background for better text readability */
+.bg-layer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  /* Allows clicking through overlay */
+}
+
+/* Initially only space background is visible */
+#bg-space {
+  z-index: 1;
+  opacity: 1;
+}
+
+#bg-rain,
+#bg-snow,
+#bg-sun,
+#bg-forest,
+#bg-aurora {
+  z-index: 1;
+  opacity: 0;
+}
+
+/* Theme-based background visibility */
+body.rain #bg-space,
+body.snow #bg-space,
+body.sun #bg-space,
+body.forest #bg-space,
+body.aurora #bg-space {
+  opacity: 0;
+}
+
+body.rain #bg-rain {
+  opacity: 1;
+}
+
+body.snow #bg-snow {
+  opacity: 1;
+}
+
+body.sun #bg-sun {
+  opacity: 1;
+}
+
+body.forest #bg-forest {
+  opacity: 1;
+}
+
+body.aurora #bg-aurora {
+  opacity: 1;
+}
+
+/* ============================================
+   RAIN & SNOW PARTICLE CANVAS
+============================================ */
+#rain-canvas,
+#snow-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  /* So canvas doesn't block clicks */
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+body.rain #rain-canvas {
+  opacity: 1;
+}
+
+body.snow #snow-canvas {
+  opacity: 1;
+}
+
+/* ============================================
+   BASE HTML/BODY STYLES
+============================================ */
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: var(--font-body);
+  background: #0a0c12;
+  /* Fallback background */
+  color: var(--theme-text);
+  overflow-x: hidden;
+}
+
+/* Main content wrapper - centers content and adds padding */
+.page-wrapper {
+  position: relative;
+  z-index: 15;
+  /* Above backgrounds */
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 24px 60px;
+}
+
+/* ============================================
+   GLASS NAVBAR (Always visible on mobile)
+   flex-wrap: nowrap ensures single line on mobile
+============================================ */
+.glass-navbar {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  background: var(--theme-bg-glass);
+  backdrop-filter: blur(20px) saturate(180%);
+  /* Glass effect */
+  border-radius: 32px;
+  border: 1px solid var(--theme-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  gap: 8px;
+  flex-wrap: nowrap;
+  /* CRUCIAL: No wrapping on mobile */
+  transition: all var(--transition);
+  box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 40px;
+}
+
+/* Navbar sections */
+.nav-left {
+  flex-shrink: 0;
+}
+
+/* Prevents shrinking */
+.nav-center {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-shrink: 1;
+  flex-wrap: nowrap;
+}
+
+.nav-right {
+  flex-shrink: 0;
+}
+
+/* Logo Styles */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--theme-accent);
+  filter: drop-shadow(0 0 6px var(--theme-glow));
+}
+
+.brand-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: var(--theme-text);
+}
+
+/* Navigation Links */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 40px;
+  color: var(--theme-text-muted);
+  transition: all 0.2s;
+  white-space: nowrap;
+  /* Prevents text wrapping */
+}
+
+.nav-link i {
+  font-size: 1.1rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--theme-accent);
+}
+
+/* Divider between center and right sections */
+.divider {
+  width: 1px;
+  height: 24px;
+  background: var(--theme-border);
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   THEME SWITCHER DROPDOWN
+============================================ */
+.theme-switcher {
+  position: relative;
+  cursor: pointer;
+}
+
+.current-theme {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--theme-text);
+}
+
+.chevron {
+  font-size: 0.7rem;
+  transition: transform 0.2s;
+}
+
+.theme-switcher.open .chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.theme-dropdown {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background: var(--theme-bg-glass);
+  backdrop-filter: blur(24px);
+  border-radius: 20px;
+  padding: 8px;
+  width: 180px;
+  border: 1px solid var(--theme-border);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: 0.2s;
+  z-index: 200;
+}
+
+.theme-switcher.open .theme-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.theme-option {
+  padding: 10px 14px;
+  display: flex;
+  gap: 12px;
+  border-radius: 14px;
+  color: var(--theme-text-muted);
+  font-size: 0.8rem;
+}
+
+.theme-option:hover,
+.theme-option.selected {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--theme-accent);
+}
+
+/* ============================================
+   HERO SECTION (Main Content Area)
+============================================ */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: rgba(10, 10, 40, 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 35px;
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Animation for hero section on load */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Left: Avatar Image */
+.hero-left {
+  flex-shrink: 0;
+}
+
+.avatar-wrapper {
+  width: 320px;
+  height: 320px;
+  background: var(--theme-bg-glass);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 30px rgba(3, 3, 35, 0.4);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Center: Text Information */
+.hero-center {
+  flex: 1;
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 5px;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--theme-accent);
+  margin-bottom: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.hero-subtitle::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--theme-accent);
+  box-shadow: 0 0 10px var(--theme-glow);
+  border-radius: 2px;
+}
+
+.hero-desc {
+  color: var(--theme-text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 450px;
+}
+
+/* Music Card - Spotify integration placeholder */
+.music-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 20px;
+  border-radius: 20px;
+  width: fit-content;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+.music-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.music-icon {
+  color: #1DB954;
+  font-size: 1.8rem;
+}
+
+.waveform {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 12px;
+}
+
+.waveform span {
+  display: block;
+  width: 3px;
+  background: #1DB954;
+  border-radius: 2px;
+  animation: pulseWave 1s infinite alternate ease-in-out;
+}
+
+/* Individual waveform bars with different delays */
+.waveform span:nth-child(1) {
+  height: 100%;
+  animation-delay: 0s;
+}
+
+.waveform span:nth-child(2) {
+  height: 40%;
+  animation-delay: 0.2s;
+}
+
+.waveform span:nth-child(3) {
+  height: 80%;
+  animation-delay: 0.4s;
+}
+
+.waveform span:nth-child(4) {
+  height: 60%;
+  animation-delay: 0.1s;
+}
+
+@keyframes pulseWave {
+  0% {
+    height: 20%;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+.play-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.play-btn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Social Media Buttons */
+.social-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--theme-text);
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--theme-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Right Side: 3D Character with Animation */
+.hero-right {
+  flex-shrink: 0;
+  width: 250px;
+  height: 300px;
+}
+
+.character-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.character-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+}
+
+/* Floating Text Bubble */
+.floating-text {
+  position: absolute;
+  top: 20px;
+  left: -30px;
+  background: rgba(0, 157, 94, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: rotate(-10deg);
+  animation: floatText 3s ease-in-out infinite 0.5s;
+}
+
+@keyframes floatText {
+  0% {
+    transform: translateY(0px) rotate(-10deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(-8deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(-10deg);
+  }
+}
+
+/* Decorative Particles */
+.particle {
+  position: absolute;
+  background: var(--theme-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--theme-accent);
+}
+
+.p1 {
+  width: 8px;
+  height: 8px;
+  top: 10%;
+  right: 10%;
+  animation: pulse 2s infinite;
+}
+
+.p2 {
+  width: 5px;
+  height: 5px;
+  bottom: 20%;
+  left: 10%;
+  animation: pulse 3s infinite 1s;
+}
+
+.p3 {
+  width: 12px;
+  height: 12px;
+  bottom: 10%;
+  right: 20%;
+  animation: pulse 2.5s infinite 0.5s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+/* Footer Note */
+.footer-note {
+  text-align: center;
+  margin-top: 48px;
+  font-size: 0.7rem;
+  color: var(--theme-text-muted);
+}
+
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   All navbar items in single line
+============================================ */
+@media (max-width: 780px) {
+  .page-wrapper {
+    padding: 16px;
+  }
+
+  .glass-navbar {
+    padding: 6px 12px;
+    gap: 6px;
+  }
+
+  .nav-link {
+    padding: 6px 8px;
+    font-size: 0.7rem;
+  }
+
+  .nav-link i {
+    font-size: 0.9rem;
+  }
+
+  /* Hide brand text on mobile to save space */
+  .brand-text {
+    display: none;
+  }
+
+  /* Hide divider on mobile */
+  .divider {
+    display: none;
+  }
+
+  /* Hero section becomes column layout */
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  /* Smaller avatar on mobile */
+  .avatar-wrapper {
+    width: 220px;
+    height: 220px;
+    margin-bottom: 15px;
+  }
+
+  .hero-center {
+    align-items: center;
+  }
+
+  .hero-name {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-desc {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* Hide 3D character on mobile to save space */
+  .hero-right {
+    display: none;
+  }
+
+  /* Center social buttons */
+  .social-row {
+    justify-content: center;
+  }
+}
+
+/* Extra small devices (under 550px) - show only icons in navbar */
+@media (max-width: 550px) {
+  .nav-link span:not(i) {
+    display: none;
+  }
+
+  .nav-link {
+    padding: 6px 6px;
+    gap: 2px;
+  }
+}
