@@ -1,4 +1,6 @@
-![[5a8e72390a066bbede2cd33612760ca3.gif]]
+<img width="2560" height="1440" alt="forest1" src="https://github.com/user-attachments/assets/d3af1b53-bf74-4667-a20b-a750299b597f" />
+
+
 #### what i want
 ___
 I am currently in my second year, and today I want to write honestly about my life.
