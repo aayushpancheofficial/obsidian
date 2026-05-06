@@ -20,11 +20,4 @@ My goal is clear:
 - To make my parents proud
 
 Because in the end, real happiness comes from growth, respect, and purpose.
-![[Pasted image 20260428152410.jpg]]
-
-
-
-hewjwedowhojw4oijorwjfofwj
-unfworrfjwefjwfooij
-uojjjj
 <img width="736" height="736" alt="image" src="https://github.com/user-attachments/assets/1b6ddda8-2fc6-4c11-8d6d-40dc9e574c06" />
