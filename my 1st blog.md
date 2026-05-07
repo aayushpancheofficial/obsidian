@@ -22,5 +22,21 @@ My goal is clear:
 Because in the end, real happiness comes from growth, respect, and purpose.
 <img width="736" height="736" alt="image" src="https://github.com/user-attachments/assets/1b6ddda8-2fc6-4c11-8d6d-40dc9e574c06" />
 
-https://www.instagram.com/reel/C2ZPfmwNprX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==
 [Visit My Instagram](https://www.instagram.com/reel/C2ZPfmwNprX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==)
+ ---
+ <a href="https://www.instagram.com/reel/C2ZPfmwNprX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
+
+<div align="center">
+
+<img 
+src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+width="90"
+/>
+
+<h2>Watch My Instagram Reel</h2>
+
+<p>Click to watch reel</p>
+
+</div>
+
+</a>
