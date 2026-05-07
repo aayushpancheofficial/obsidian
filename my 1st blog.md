@@ -1,3 +1,4 @@
+<img width="500" height="281" alt="5a8e72390a066bbede2cd33612760ca3" src="https://github.com/user-attachments/assets/87d3ebbf-0ef7-4c40-925e-5d035ecafc11" />
 
 #### *what i want*
 ___
