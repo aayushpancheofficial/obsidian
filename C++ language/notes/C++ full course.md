@@ -1,14 +1,4 @@
 Table of Contents
-
----
-title: "React Learning Path"
-date: "2024-05-15"
-category: "Web Dev"
-tags: ["react", "frontend"]
-image: "banner.png"
----
-
-
 - [[# Introduction to C++ and Setup]]
 - [[# Writing Your First C++ Program]]
 - [[# Variables and Data Types]]
