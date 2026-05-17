@@ -1,15 +1,10 @@
 ---
-title: "HTML5 Layout Study"
-date: "2026-05-17"
+title: "HTML5 "
 ---
-
-# HTML5 Layout Study
-
-Aaj humne seekha ki page ko structure kaise karte hain. Iske baad hum [[CSS Grid]] aur [[Flexbox Alignment]] ka use karke is structure ko align karenge. 
-
-(Clicking on "CSS Grid" above will automatically open your "CSS Grid.md" note!)
+<img width="500" height="276" alt="67ab8e7176bac7bbc6c8427645f0ba1e" src="https://github.com/user-attachments/assets/f97071be-8a7f-4f86-b338-d8860a023c5c" />
 
 ### **Module 1: Introduction to HTML**
+module 1 jo bahut basic hota h , niche kuch points h jo sabhi ko pta hona chahiye
 - [[What is HTML]]
 - History & versions (HTML1–HTML5)
 - How HTML works with CSS & JavaScript
