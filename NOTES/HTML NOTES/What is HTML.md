@@ -1,10 +1,5 @@
-
----
 ---
 title: "What is HTML"
-card: false
----
-
 card: false
 ---
 
