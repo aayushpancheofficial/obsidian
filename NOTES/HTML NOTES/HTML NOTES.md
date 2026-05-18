@@ -1,9 +1,9 @@
 ---
-title: "HTML5 Layout Study"
+title: "HTML5 "
 date: "2026-05-17"
 ---
 
-# HTML5 Layout Study
+# HTML5 
 
 Aaj humne seekha ki page ko structure kaise karte hain. Iske baad hum [[CSS Grid]] aur [[Flexbox Alignment]] ka use karke is structure ko align karenge. 
 
