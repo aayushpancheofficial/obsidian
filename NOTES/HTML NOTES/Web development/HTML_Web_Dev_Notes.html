@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Web Development Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2230;
+    --border: #30363d;
+    --accent: #58a6ff;
+    --accent2: #3fb950;
+    --accent3: #f78166;
+    --accent4: #d2a8ff;
+    --accent5: #ffa657;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --code-bg: #0d1117;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Sora', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeDown 0.7s ease both;
+  }
+
+  .header .tag {
+    display: inline-block;
+    background: rgba(88,166,255,0.12);
+    color: var(--accent);
+    border: 1px solid rgba(88,166,255,0.3);
+    border-radius: 20px;
+    padding: 0.2rem 0.9rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    background: linear-gradient(135deg, #58a6ff 0%, #d2a8ff 60%, #ffa657 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+
+  .header p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 300;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .toc-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.4rem;
+  }
+
+  .toc a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0;
+    transition: color 0.2s;
+  }
+
+  .toc a:hover { color: var(--accent4); }
+  .toc a::before { content: '→'; opacity: 0.5; font-size: 0.75rem; }
+
+  /* SECTIONS */
+  .section {
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .section h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  .section-num {
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-family: 'Fira Code', monospace;
+    margin-left: auto;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 0.9rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .card:hover {
+    border-color: rgba(88,166,255,0.35);
+    transform: translateX(3px);
+  }
+
+  .card-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .card-title .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .card p {
+    font-size: 0.83rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* CODE BLOCKS */
+  .code-wrap {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin: 0.8rem 0;
+    overflow: hidden;
+  }
+
+  .code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+  }
+
+  .code-lang {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .code-dots { display: flex; gap: 5px; }
+  .code-dots span { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-r { background: #ff5f56; }
+  .dot-y { background: #ffbd2e; }
+  .dot-g { background: #27c93f; }
+
+  pre {
+    padding: 1rem;
+    overflow-x: auto;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+
+  .kw { color: #ff7b72; }   /* keywords */
+  .at { color: #79c0ff; }   /* attributes */
+  .st { color: #a5d6ff; }   /* strings */
+  .cm { color: #6e7681; font-style: italic; } /* comments */
+  .tg { color: #7ee787; }   /* tags */
+  .nm { color: #d2a8ff; }   /* names/values */
+  .tx { color: #e6edf3; }   /* plain text */
+  .prop { color: #79c0ff; } /* css properties */
+  .val { color: #a5d6ff; }  /* css values */
+  .sel { color: #7ee787; }  /* css selectors */
+
+  /* TIPS */
+  .tip {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    background: rgba(63,185,80,0.07);
+    border: 1px solid rgba(63,185,80,0.25);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.83rem;
+  }
+
+  .tip-icon { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
+
+  .warn {
+    background: rgba(247,129,102,0.08);
+    border-color: rgba(247,129,102,0.28);
+  }
+
+  .info {
+    background: rgba(88,166,255,0.07);
+    border-color: rgba(88,166,255,0.25);
+  }
+
+  /* TAG PILLS */
+  .pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+
+  .pill {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.72rem;
+    padding: 0.15rem 0.6rem;
+    border-radius: 5px;
+    border: 1px solid;
+  }
+
+  .pill-blue  { color: var(--accent);  border-color: rgba(88,166,255,0.3);  background: rgba(88,166,255,0.08); }
+  .pill-green { color: var(--accent2); border-color: rgba(63,185,80,0.3);   background: rgba(63,185,80,0.08); }
+  .pill-purple{ color: var(--accent4); border-color: rgba(210,168,255,0.3); background: rgba(210,168,255,0.08); }
+  .pill-orange{ color: var(--accent5); border-color: rgba(255,166,87,0.3);  background: rgba(255,166,87,0.08); }
+  .pill-red   { color: var(--accent3); border-color: rgba(247,129,102,0.3); background: rgba(247,129,102,0.08); }
+
+  /* TABLE */
+  .attr-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    margin: 0.75rem 0;
+    background: var(--surface);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .attr-table th {
+    background: var(--surface2);
+    padding: 0.55rem 0.9rem;
+    text-align: left;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .attr-table td {
+    padding: 0.5rem 0.9rem;
+    border-top: 1px solid var(--border);
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .attr-table td:first-child {
+    font-family: 'Fira Code', monospace;
+    color: var(--accent);
+    font-size: 0.78rem;
+  }
+
+  .attr-table td:last-child { color: var(--muted); }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 2.5rem 0;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .toc-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="tag">📖 Study Notes</div>
+    <h1>HTML Web Development</h1>
+    <p>Complete beginner-friendly reference notes · Copy into Obsidian</p>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <div class="toc-grid">
+      <a href="#s1">1. What is HTML?</a>
+      <a href="#s2">2. Basic Structure</a>
+      <a href="#s3">3. Text & Headings</a>
+      <a href="#s4">4. Links & Images</a>
+      <a href="#s5">5. Lists</a>
+      <a href="#s6">6. Tables</a>
+      <a href="#s7">7. Forms & Inputs</a>
+      <a href="#s8">8. Semantic HTML</a>
+      <a href="#s9">9. CSS Basics</a>
+      <a href="#s10">10. JavaScript Basics</a>
+      <a href="#s11">11. The Box Model</a>
+      <a href="#s12">12. Quick Reference</a>
+    </div>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(88,166,255,0.12)">🌐</div>
+      <h2 style="color:var(--accent)">What is HTML?</h2>
+      <span class="section-num">01</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:var(--accent)"></span>Definition</div>
+      <p><strong style="color:var(--text)">HTML</strong> = HyperText Markup Language. It is the <em>skeleton</em> of every webpage — it tells the browser what content exists and what it means (not how it looks).</p>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:var(--accent2)"></span>The 3 Languages of the Web</div>
+      <p>HTML → Structure &nbsp;|&nbsp; CSS → Style &nbsp;|&nbsp; JavaScript → Behaviour</p>
+      <div class="pills">
+        <span class="pill pill-blue">HTML = bones</span>
+        <span class="pill pill-green">CSS = skin</span>
+        <span class="pill pill-purple">JS = muscles</span>
+      </div>
+    </div>
+
+    <div class="tip info">
+      <span class="tip-icon">💡</span>
+      <span>HTML files are just plain text files saved with a <code>.html</code> extension. You can open one with any browser.</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 2 -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(210,168,255,0.12)">🏗️</div>
+      <h2 style="color:var(--accent4)">Basic Page Structure</h2>
+      <span class="section-num">02</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:var(--accent4)"></span>Anatomy of an HTML Tag</div>
+      <p>Tags wrap content. Most tags have an opening and a closing tag.</p>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+        <span class="code-lang">html</span>
+      </div>
+      <pre><span class="cm">&lt;!-- Opening tag  content  Closing tag --&gt;</span>
+<span class="tg">&lt;p&gt;</span>   Hello World   <span class="tg">&lt;/p&gt;</span>
+
+<span class="cm">&lt;!-- Self-closing (void) tag – no content --&gt;</span>
+<span class="tg">&lt;img</span> <span class="at">src</span>=<span class="st">"photo.jpg"</span> <span class="at">alt</span>=<span class="st">"A photo"</span><span class="tg">&gt;</span></pre>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:var(--accent4)"></span>The Full Boilerplate</div>
+      <p>Every HTML file should start with this template:</p>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+        <span class="code-lang">html</span>
+      </div>
+      <pre><span class="cm">&lt;!-- Tells the browser: "this is HTML5" --&gt;</span>
+<span class="kw">&lt;!DOCTYPE html&gt;</span>
+
+<span class="tg">&lt;html</span> <span class="at">lang</span>=<span class="st">"en"</span><span class="tg">&gt;</span>
+
+  <span class="tg">&lt;head&gt;</span>
+    <span class="cm">&lt;!-- Invisible metadata --&gt;</span>
+    <span class="tg">&lt;meta</span> <span class="at">charset</span>=<span class="st">"UTF-8"</span><span class="tg">&gt;</span>
+    <span class="tg">&lt;meta</span> <span class="at">name</span>=<span class="st">"viewport"</span> <span class="at">content</span>=<span class="st">"width=device-width, initial-scale=1.0"</span><span class="tg">&gt;</span>
+    <span class="tg">&lt;title&gt;</span>My Page<span class="tg">&lt;/title&gt;</span>
+    <span class="tg">&lt;link</span> <span class="at">rel</span>=<span class="st">"stylesheet"</span> <span class="at">href</span>=<span class="st">"style.css"</span><span class="tg">&gt;</span>
+  <span class="tg">&lt;/head&gt;</span>
+
+  <span class="tg">&lt;body&gt;</span>
+    <span class="cm">&lt;!-- Everything VISIBLE goes here --&gt;</span>
+    <span class="tg">&lt;h1&gt;</span>Hello, World!<span class="tg">&lt;/h1&gt;</span>
+    <span class="tg">&lt;script</span> <span class="at">src</span>=<span class="st">"script.js"</span><span class="tg">&gt;&lt;/script&gt;</span>
+  <span class="tg">&lt;/body&gt;</span>
+
+<span class="tg">&lt;/html&gt;</span></pre>
+    </div>
+
+    <div class="tip">
+      <span class="tip-icon">✅</span>
+      <span><strong>Tip:</strong> In VS Code, type <code>!</code> then press <kbd>Tab</kbd> — it auto-generates the full boilerplate for you!</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 3 -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(63,185,80,0.12)">✏️</div>
+      <h2 style="color:var(--accent2)">Text & Headings</h2>
+      <span class="section-num">03</span>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+        <span class="code-lang">html</span>
+      </div>
+      <pre><span class="cm">&lt;!-- Headings: h1 = biggest, h6 = smallest --&gt;</span>
+<span class="tg">&lt;h1&gt;</span>Main Title<span class="tg">&lt;/h1&gt;</span>
+<span class="tg">&lt;h2&gt;</span>Section Title<span class="tg">&lt;/h2&gt;</span>
+<span class="tg">&lt;h3&gt;</span>Sub-section<span class="tg">&lt;/h3&gt;</span>
+
+<span class="cm">&lt;!-- Paragraph --&gt;</span>
+<span class="tg">&lt;p&gt;</span>This is a paragraph of text.<span class="tg">&lt;/p&gt;</span>
+
+<span class="cm">&lt;!-- Inline formatting --&gt;</span>
+<span class="tg">&lt;strong&gt;</span>Bold / important<span class="tg">&lt;/strong&gt;</span>
+<span class="tg">&lt;em&gt;</span>Italic / emphasis<span class="tg">&lt;/em&gt;</span>
+<span class="tg">&lt;mark&gt;</span>Highlighted<span class="tg">&lt;/mark&gt;</span>
+<span class="tg">&lt;code&gt;</span>inline code<span class="tg">&lt;/code&gt;</span>
+
+<span class="cm">&lt;!-- Line break and horizontal rule --&gt;</span>
+<span class="tg">&lt;br&gt;</span>   <span class="cm">&lt;!-- line break --&gt;</span>
+<span class="tg">&lt;hr&gt;</span>   <span class="cm">&lt;!-- horizontal divider line --&gt;</span></pre>
+    </div>
+
+    <div class="tip warn">
+      <span class="tip-icon">⚠️</span>
+      <span>Use only <strong>one &lt;h1&gt; per page</strong> — it's your main heading and important for SEO.</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 4 -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(255,166,87,0.12)">🔗</div>
+      <h2 style="color:var(--accent5)">Links & Images</h2>
+      <span class="section-num">04</span>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+        <span class="code-lang">html — links</span>
+      </div>
+      <pre><span class="cm">&lt;!-- External link --&gt;</span>
+<span class="tg">&lt;a</span> <span class="at">href</span>=<span class="st">"https://google.com"</span> <span class="at">target</span>=<span class="st">"_blank"</span><span class="tg">&gt;</span>Google<span class="tg">&lt;/a&gt;</span>
+
+<span class="cm">&lt;!-- Link to another page in your site --&gt;</span>
+<span class="tg">&lt;a</span> <span class="at">href</span>=<span class="st">"about.html"</span><span class="tg">&gt;</span>About Me<span class="tg">&lt;/a&gt;</span>
+
+<span class="cm">&lt;!-- Jump to a section on the same page --&gt;</span>
+<span class="tg">&lt;a</span> <span class="at">href</span>=<span class="st">"#contact"</span><span class="tg">&gt;</span>Go to Contact<span class="tg">&lt;/a&gt;</span>
+<span class="tg">&lt;section</span> <span class="at">id</span>=<span class="st">"contact"</span><span class="tg">&gt;</span>...<span class="tg">&lt;/section&gt;</span>
+
+<span class="cm">&lt;!-- Email link --&gt;</span>
+<span class="tg">&lt;a</span> <span class="at">href</span>=<span class="st">"mailto:hello@email.com"</span><span class="tg">&gt;</span>Email me<span class="tg">&lt;/a&gt;</span></pre>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+        <span class="code-lang">html — images</span>
+      </div>
+      <pre><span class="cm">&lt;!-- Basic image --&gt;</span>
+<span class="tg">&lt;img</span> <span class="at">src</span>=<span class="st">"cat.jpg"</span> <span class="at">alt</span>=<span class="st">"A cute cat"</span> <span class="at">width</span>=<span class="st">"300"</span><span class="tg">&gt;</span>
+
+<span class="cm">&lt;!-- Image from the web --&gt;</span>
+<span class="tg">&lt;img</span> <span class="at">src</span>=<span class="st">"https://example.com/photo.jpg"</span> <span class="at">alt</span>=<span class="st">"Description"</span><span class="tg">&gt;</span>
+
+<span class="cm">&lt;!-- Clickable image (link + image combined) --&gt;</span>
+<span class="tg">&lt;a</span> <span class="at">href</span>=<span class="st">"https://google.com"</span><span class="tg">&gt;</span>
+  <span class="tg">&lt;img</span> <span class="at">src</span>=<span class="st">"logo.png"</span> <span class="at">alt</span>=<span class="st">"Google Logo"</span><span class="tg">&gt;</span>
+<span class="tg">&lt;/a&gt;</span></pre>
+    </div>
+
+    <table class="attr-table">
+      <tr><th>Attribute</th><th>Purpose</th><th>Required?</th></tr>
+      <tr><td>src</td><td>URL or path to the image file</td><td>✅ Yes</td></tr>
+      <tr><td>alt</td><td>Text if image can't load; read by screen readers</td><td>✅ Yes</td></tr>
+      <tr><td>width / height</td><td>Set size in pixels</td><td>Optional</td></tr>
+      <tr><td>loading="lazy"</td><td>Delays loading until image is in view (performance)</td><td>Optional</td></tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 5 -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(247,129,102,0.12)">📋</div>
+      <h2 style="color:var(--accent3)">Lists</h2>
+      <span class="section-num">05</span>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+        <span class="code-lang">html</span>
+      </div>
+      <pre><span class="cm">&lt;!-- Unordered list (bullets) --&gt;</span>
+<span class="tg">&lt;ul&gt;</span>
+  <span class="tg">&lt;li&gt;</span>HTML<span class="tg">&lt;/li&gt;</span>
+  <span class="tg">&lt;li&gt;</span>CSS<span class="tg">&lt;/li&gt;</span>
+  <span class="tg">&lt;li&gt;</span>JavaScript<span class="tg">&lt;/li&gt;</span>
+<span class="tg">&lt;/ul&gt;</span>
+
+<span class="cm">&lt;!-- Ordered list (numbered) --&gt;</span>
+<span class="tg">&lt;ol&gt;</span>
+  <span class="tg">&lt;li&gt;</span>First step<span class="tg">&lt;/li&gt;</span>
+  <span class="tg">&lt;li&gt;</span>Second step<span class="tg">&lt;/li&gt;</span>
+<span class="tg">&lt;/ol&gt;</span>
+
+<span class="cm">&lt;!-- Nested list --&gt;</span>
+<span class="tg">&lt;ul&gt;</span>
+  <span class="tg">&lt;li&gt;</span>Frontend
+    <span class="tg">&lt;ul&gt;</span>
+      <span class="tg">&lt;li&gt;</span>HTML<span class="tg">&lt;/li&gt;</span>
+      <span class="tg">&lt;li&gt;</span>CSS<span class="tg">&lt;/li&gt;</span>
+    <span class="tg">&lt;/ul&gt;</span>
+  <span class="tg">&lt;/li&gt;</span>
+<span class="tg">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 6 -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(88,166,255,0.12)">📊</div>
+      <h2 style="color:var(--accent)">Tables</h2>
+      <span class="section-num">06</span>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+        <span class="code-lang">html</span>
+      </div>
+      <pre><span class="tg">&lt;table&gt;</span>
+
+  <span class="tg">&lt;thead&gt;</span>                        <span class="cm">&lt;!-- Header row --&gt;</span>
+    <span class="tg">&lt;tr&gt;</span>
+      <span class="tg">&lt;th&gt;</span>Name<span class="tg">&lt;/th&gt;</span>  <span class="tg">&lt;th&gt;</span>Age<span class="tg">&lt;/th&gt;</span>
+    <span class="tg">&lt;/tr&gt;</span>
+  <span class="tg">&lt;/thead&gt;</span>
+
+  <span class="tg">&lt;tbody&gt;</span>                        <span class="cm">&lt;!-- Data rows --&gt;</span>
+    <span class="tg">&lt;tr&gt;</span>
+      <span class="tg">&lt;td&gt;</span>Alice<span class="tg">&lt;/td&gt;</span>  <span class="tg">&lt;td&gt;</span>24<span class="tg">&lt;/td&gt;</span>
+    <span class="tg">&lt;/tr&gt;</span>
+    <span class="tg">&lt;tr&gt;</span>
+      <span class="tg">&lt;td&gt;</span>Bob<span class="tg">&lt;/td&gt;</span>    <span class="tg">&lt;td&gt;</span>30<span class="tg">&lt;/td&gt;</span>
+    <span class="tg">&lt;/tr&gt;</span>
+  <span class="tg">&lt;/tbody&gt;</span>
+
+<span class="tg">&lt;/table&gt;</span></pre>
+    </div>
+
+    <div class="pills" style="margin-top:0.5rem">
+      <span class="pill pill-blue">&lt;table&gt; wrapper</span>
+      <span class="pill pill-green">&lt;tr&gt; = table row</span>
+      <span class="pill pill-purple">&lt;th&gt; = header cell</span>
+      <span class="pill pill-orange">&lt;td&gt; = data cell</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 7 -->
+  <div class="section" id="s7">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(210,168,255,0.12)">📝</div>
+      <h2 style="color:var(--accent4)">Forms & Inputs</h2>
+      <span class="section-num">07</span>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+        <span class="code-lang">html</span>
+      </div>
+      <pre><span class="tg">&lt;form</span> <span class="at">action</span>=<span class="st">"/submit"</span> <span class="at">method</span>=<span class="st">"POST"</span><span class="tg">&gt;</span>
+
+  <span class="cm">&lt;!-- Text input --&gt;</span>
+  <span class="tg">&lt;label</span> <span class="at">for</span>=<span class="st">"name"</span><span class="tg">&gt;</span>Your Name:<span class="tg">&lt;/label&gt;</span>
+  <span class="tg">&lt;input</span> <span class="at">type</span>=<span class="st">"text"</span> <span class="at">id</span>=<span class="st">"name"</span> <span class="at">name</span>=<span class="st">"name"</span> <span class="at">placeholder</span>=<span class="st">"Alice"</span> <span class="at">required</span><span class="tg">&gt;</span>
+
+  <span class="cm">&lt;!-- Email input --&gt;</span>
+  <span class="tg">&lt;input</span> <span class="at">type</span>=<span class="st">"email"</span> <span class="at">name</span>=<span class="st">"email"</span> <span class="at">placeholder</span>=<span class="st">"you@email.com"</span><span class="tg">&gt;</span>
+
+  <span class="cm">&lt;!-- Password --&gt;</span>
+  <span class="tg">&lt;input</span> <span class="at">type</span>=<span class="st">"password"</span> <span class="at">name</span>=<span class="st">"password"</span><span class="tg">&gt;</span>
+
+  <span class="cm">&lt;!-- Dropdown --&gt;</span>
+  <span class="tg">&lt;select</span> <span class="at">name</span>=<span class="st">"colour"</span><span class="tg">&gt;</span>
+    <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"red"</span><span class="tg">&gt;</span>Red<span class="tg">&lt;/option&gt;</span>
+    <span class="tg">&lt;option</span> <span class="at">value</span>=<span class="st">"blue"</span><span class="tg">&gt;</span>Blue<span class="tg">&lt;/option&gt;</span>
+  <span class="tg">&lt;/select&gt;</span>
+
+  <span class="cm">&lt;!-- Multi-line text --&gt;</span>
+  <span class="tg">&lt;textarea</span> <span class="at">name</span>=<span class="st">"message"</span> <span class="at">rows</span>=<span class="st">"4"</span><span class="tg">&gt;&lt;/textarea&gt;</span>
+
+  <span class="cm">&lt;!-- Checkbox --&gt;</span>
+  <span class="tg">&lt;input</span> <span class="at">type</span>=<span class="st">"checkbox"</span> <span class="at">name</span>=<span class="st">"agree"</span><span class="tg">&gt;</span> I agree
+
+  <span class="cm">&lt;!-- Submit button --&gt;</span>
+  <span class="tg">&lt;button</span> <span class="at">type</span>=<span class="st">"submit"</span><span class="tg">&gt;</span>Send<span class="tg">&lt;/button&gt;</span>
+
+<span class="tg">&lt;/form&gt;</span></pre>
+    </div>
+
+    <table class="attr-table">
+      <tr><th>Input type</th><th>What it does</th></tr>
+      <tr><td>text</td><td>Single-line text</td></tr>
+      <tr><td>email</td><td>Email with built-in validation</td></tr>
+      <tr><td>password</td><td>Hides the typed characters</td></tr>
+      <tr><td>number</td><td>Numeric input with arrows</td></tr>
+      <tr><td>checkbox</td><td>Tick box (on/off)</td></tr>
+      <tr><td>radio</td><td>Pick one from a group</td></tr>
+      <tr><td>date</td><td>Date picker</td></tr>
+      <tr><td>file</td><td>Upload a file</td></tr>
+      <tr><td>range</td><td>Slider</td></tr>
+      <tr><td>color</td><td>Colour picker</td></tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 8 -->
+  <div class="section" id="s8">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(63,185,80,0.12)">🧩</div>
+      <h2 style="color:var(--accent2)">Semantic HTML</h2>
+      <span class="section-num">08</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:var(--accent2)"></span>What is Semantic HTML?</div>
+      <p>Using tags that <em>describe the meaning</em> of content, not just its appearance. Helps SEO, accessibility, and code readability.</p>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+        <span class="code-lang">html — semantic layout</span>
+      </div>
+      <pre><span class="tg">&lt;header&gt;</span>   <span class="cm">&lt;!-- Site logo, nav, title --&gt;</span>
+  <span class="tg">&lt;nav&gt;</span>
+    <span class="tg">&lt;a</span> <span class="at">href</span>=<span class="st">"/"</span><span class="tg">&gt;</span>Home<span class="tg">&lt;/a&gt;</span>
+    <span class="tg">&lt;a</span> <span class="at">href</span>=<span class="st">"/about"</span><span class="tg">&gt;</span>About<span class="tg">&lt;/a&gt;</span>
+  <span class="tg">&lt;/nav&gt;</span>
+<span class="tg">&lt;/header&gt;</span>
+
+<span class="tg">&lt;main&gt;</span>     <span class="cm">&lt;!-- Primary page content --&gt;</span>
+  <span class="tg">&lt;article&gt;</span>  <span class="cm">&lt;!-- Self-contained content (blog post, etc.) --&gt;</span>
+    <span class="tg">&lt;h1&gt;</span>My Blog Post<span class="tg">&lt;/h1&gt;</span>
+    <span class="tg">&lt;p&gt;</span>Content here...<span class="tg">&lt;/p&gt;</span>
+  <span class="tg">&lt;/article&gt;</span>
+
+  <span class="tg">&lt;aside&gt;</span>    <span class="cm">&lt;!-- Sidebar or related content --&gt;</span>
+    <span class="tg">&lt;p&gt;</span>Related links<span class="tg">&lt;/p&gt;</span>
+  <span class="tg">&lt;/aside&gt;</span>
+<span class="tg">&lt;/main&gt;</span>
+
+<span class="tg">&lt;footer&gt;</span>   <span class="cm">&lt;!-- Copyright, links --&gt;</span>
+  <span class="tg">&lt;p&gt;</span>© 2025 My Site<span class="tg">&lt;/p&gt;</span>
+<span class="tg">&lt;/footer&gt;</span></pre>
+    </div>
+
+    <div class="tip info">
+      <span class="tip-icon">💡</span>
+      <span>Use <code>&lt;div&gt;</code> only for layout/styling with no specific meaning. Use semantic tags everywhere else.</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 9 -->
+  <div class="section" id="s9">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(88,166,255,0.12)">🎨</div>
+      <h2 style="color:var(--accent)">CSS Basics</h2>
+      <span class="section-num">09</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:var(--accent)"></span>3 Ways to Add CSS</div>
+      <p>Inline (bad practice) → Internal &lt;style&gt; tag → External .css file (best)</p>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+        <span class="code-lang">css — syntax</span>
+      </div>
+      <pre><span class="cm">/* selector { property: value; } */</span>
+
+<span class="sel">h1</span> {
+  <span class="prop">color</span>: <span class="val">navy</span>;
+  <span class="prop">font-size</span>: <span class="val">2rem</span>;
+  <span class="prop">text-align</span>: <span class="val">center</span>;
+}
+
+<span class="cm">/* Class selector */</span>
+<span class="sel">.card</span> {
+  <span class="prop">background</span>: <span class="val">#f0f0f0</span>;
+  <span class="prop">padding</span>: <span class="val">1rem</span>;
+  <span class="prop">border-radius</span>: <span class="val">8px</span>;
+}
+
+<span class="cm">/* ID selector */</span>
+<span class="sel">#hero</span> {
+  <span class="prop">height</span>: <span class="val">100vh</span>;
+  <span class="prop">background</span>: <span class="val">linear-gradient(135deg, #667eea, #764ba2)</span>;
+}
+
+<span class="cm">/* Pseudo-class (hover state) */</span>
+<span class="sel">a:hover</span> {
+  <span class="prop">color</span>: <span class="val">red</span>;
+  <span class="prop">text-decoration</span>: <span class="val">underline</span>;
+}</pre>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+        <span class="code-lang">css — flexbox quick layout</span>
+      </div>
+      <pre><span class="sel">.container</span> {
+  <span class="prop">display</span>: <span class="val">flex</span>;
+  <span class="prop">justify-content</span>: <span class="val">center</span>;   <span class="cm">/* horizontal */</span>
+  <span class="prop">align-items</span>: <span class="val">center</span>;      <span class="cm">/* vertical */</span>
+  <span class="prop">gap</span>: <span class="val">1rem</span>;                 <span class="cm">/* space between items */</span>
+  <span class="prop">flex-wrap</span>: <span class="val">wrap</span>;           <span class="cm">/* wrap to next line */</span>
+}</pre>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 10 -->
+  <div class="section" id="s10">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(255,166,87,0.12)">⚡</div>
+      <h2 style="color:var(--accent5)">JavaScript Basics</h2>
+      <span class="section-num">10</span>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+        <span class="code-lang">javascript — DOM manipulation</span>
+      </div>
+      <pre><span class="cm">// Select an element</span>
+<span class="kw">const</span> btn = document.<span class="nm">querySelector</span>(<span class="st">"#myButton"</span>);
+<span class="kw">const</span> all = document.<span class="nm">querySelectorAll</span>(<span class="st">".card"</span>);
+
+<span class="cm">// Change content</span>
+btn.textContent = <span class="st">"Click me!"</span>;
+btn.style.color = <span class="st">"red"</span>;
+
+<span class="cm">// Add class</span>
+btn.<span class="nm">classList</span>.<span class="nm">add</span>(<span class="st">"active"</span>);
+btn.<span class="nm">classList</span>.<span class="nm">toggle</span>(<span class="st">"hidden"</span>);
+
+<span class="cm">// Listen for events</span>
+btn.<span class="nm">addEventListener</span>(<span class="st">"click"</span>, <span class="kw">function</span>() {
+  <span class="nm">alert</span>(<span class="st">"Button clicked!"</span>);
+});
+
+<span class="cm">// Create and add a new element</span>
+<span class="kw">const</span> p = document.<span class="nm">createElement</span>(<span class="st">"p"</span>);
+p.textContent = <span class="st">"Hello!"</span>;
+document.body.<span class="nm">appendChild</span>(p);</pre>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 11 -->
+  <div class="section" id="s11">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(247,129,102,0.12)">📦</div>
+      <h2 style="color:var(--accent3)">The CSS Box Model</h2>
+      <span class="section-num">11</span>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="dot" style="background:var(--accent3)"></span>Every element is a box with 4 layers</div>
+      <p>Content → Padding → Border → Margin (outside in)</p>
+    </div>
+
+    <div class="code-wrap">
+      <div class="code-header">
+        <div class="code-dots"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+        <span class="code-lang">css</span>
+      </div>
+      <pre><span class="sel">.box</span> {
+  <span class="prop">width</span>: <span class="val">200px</span>;          <span class="cm">/* content width */</span>
+  <span class="prop">padding</span>: <span class="val">20px</span>;         <span class="cm">/* space INSIDE border */</span>
+  <span class="prop">border</span>: <span class="val">2px solid #333</span>; <span class="cm">/* the border line */</span>
+  <span class="prop">margin</span>: <span class="val">10px</span>;          <span class="cm">/* space OUTSIDE border */</span>
+
+  <span class="cm">/* Make sizing predictable — always add this! */</span>
+  <span class="prop">box-sizing</span>: <span class="val">border-box</span>;
+}</pre>
+    </div>
+
+    <div class="tip">
+      <span class="tip-icon">✅</span>
+      <span>Add <code>*, *::before, *::after { box-sizing: border-box; }</code> at the top of every CSS file. It prevents surprise size overflows.</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 12 -->
+  <div class="section" id="s12">
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(210,168,255,0.12)">⚡</div>
+      <h2 style="color:var(--accent4)">Quick Reference Cheatsheet</h2>
+      <span class="section-num">12</span>
+    </div>
+
+    <table class="attr-table">
+      <tr><th>Tag / Concept</th><th>Use it for</th></tr>
+      <tr><td>&lt;!DOCTYPE html&gt;</td><td>Always first line of every HTML file</td></tr>
+      <tr><td>&lt;head&gt;</td><td>Metadata, title, CSS links (not visible)</td></tr>
+      <tr><td>&lt;body&gt;</td><td>All visible page content</td></tr>
+      <tr><td>&lt;h1&gt;–&lt;h6&gt;</td><td>Headings (one &lt;h1&gt; per page)</td></tr>
+      <tr><td>&lt;p&gt;</td><td>Paragraphs</td></tr>
+      <tr><td>&lt;a href=""&gt;</td><td>Hyperlinks</td></tr>
+      <tr><td>&lt;img src="" alt=""&gt;</td><td>Images (alt is mandatory)</td></tr>
+      <tr><td>&lt;ul&gt; / &lt;ol&gt;</td><td>Unordered / ordered lists</td></tr>
+      <tr><td>&lt;li&gt;</td><td>List item (inside ul/ol)</td></tr>
+      <tr><td>&lt;div&gt;</td><td>Generic container (for CSS layout)</td></tr>
+      <tr><td>&lt;span&gt;</td><td>Generic inline wrapper (for CSS styling)</td></tr>
+      <tr><td>&lt;form&gt;</td><td>User input form</td></tr>
+      <tr><td>&lt;input&gt;</td><td>Text field, checkbox, etc.</td></tr>
+      <tr><td>&lt;button&gt;</td><td>Clickable button</td></tr>
+      <tr><td>&lt;header&gt;</td><td>Top of page / section</td></tr>
+      <tr><td>&lt;nav&gt;</td><td>Navigation links</td></tr>
+      <tr><td>&lt;main&gt;</td><td>Main content of the page</td></tr>
+      <tr><td>&lt;article&gt;</td><td>Self-contained post or content</td></tr>
+      <tr><td>&lt;section&gt;</td><td>Thematic grouping of content</td></tr>
+      <tr><td>&lt;aside&gt;</td><td>Sidebar / secondary content</td></tr>
+      <tr><td>&lt;footer&gt;</td><td>Bottom of page / section</td></tr>
+      <tr><td>class=""</td><td>Reusable CSS hook (starts with . in CSS)</td></tr>
+      <tr><td>id=""</td><td>Unique CSS/JS hook (starts with # in CSS)</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    HTML Web Dev Notes · Made for Obsidian · Open in any browser
+  </div>
+
+</div>
+</body>
+</html>
