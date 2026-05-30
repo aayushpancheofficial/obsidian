@@ -175,3 +175,5 @@ Here is your **clean + corrected Obsidian syllabus note (Computer System Archite
 ---
 
 ## [[important csa ]]
+[DBMS TOPIC WISE.pdf](https://github.com/user-attachments/files/28428813/DBMS.TOPIC.WISE.pdf)
+
