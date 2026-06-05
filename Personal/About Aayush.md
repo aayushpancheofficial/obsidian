@@ -49,48 +49,22 @@ Because in the end, real happiness comes from growth, respect, and purpose
 
 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2Z6NuidijVp8AAAqN5moZ1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
-```md
-<div align="center">
+#### Quotes
 
-# 📜 Quotes That Drive Me
+> *"If it was easy, anyone could have done it."*
+> — 
 
-</div>
+> *"A man who is master of patience is master of everything else."*
+> — George Savile
 
----
+> *"If you don't build your own dream, someone will hire you to build theirs."*
+> — Jim Rohn
 
-> ### 💭 "If it was easy, anyone could have done it."
-> ---
+> *"Man is made by his belief. As he believes, so he is."*
+> — Bhagavad Gita
 
-<br>
+> *"Arise, awake, and stop not till the goal is reached."*
+> — Katha Upanishad
 
-> ### ⏳ "A man who is master of patience is master of everything else."
-> **— George Savile**
-
-<br>
-
-> ### 🚀 "If you don't build your own dream, someone will hire you to build theirs."
-> **— Jim Rohn**
-
-<br>
-
-> ### 🧠 "Man is made by his belief. As he believes, so he is."
-> **— Bhagavad Gita**
-
-<br>
-
-> ### 🔥 "Arise, awake, and stop not till the goal is reached."
-> **— Katha Upanishad**
-
-<br>
-
-> ### ⚔️ "If the pain doesn't kill me, it will only make me stronger."
-> **— Sung Jin-Woo, Solo Leveling**
-
----
-
-<div align="center">
-
-*"The goal is not to be perfect. The goal is to keep moving forward."*
-
-</div>
-```
+> *"If the pain doesn't kill me, it will only make me stronger."*
+> — Sung Jin-Woo, Solo Leveling
