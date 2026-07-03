@@ -1,4 +1,4 @@
-# How I Accidentally Fell in Love with Dance
+#  Fell in Love with Dance
 
 I was never a trained dancer.
 
@@ -352,12 +352,7 @@ But it was one of my favorite moments.
 This reel reminds me where my journey started.
 
 🔗 https://www.instagram.com/reel/DaVmhW0hLoi/
-<blockquote class="instagram-media"
-data-instgrm-permalink="https://www.instagram.com/reel/DaVmhW0hLoi/"
-data-instgrm-version="14">
-</blockquote>
 
-<script async src="https://www.instagram.com/embed.js"></script>
 
 
 
