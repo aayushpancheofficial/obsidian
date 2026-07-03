@@ -139,9 +139,7 @@ No practice.
 Just music.
 
 _(I'll attach that old video here.)_
-
 ![[2 dance.mp4]]
-
 ---
 
 ## Then came college.
@@ -371,22 +369,31 @@ For me, music and dance can never be separated. Music creates the emotion, and d
 
 I'll keep sharing my dance journey here.
 
-New performances.
+Every new performance, every new song, every forgotten step, and every small improvement will become a part of this blog.
 
-New songs.
+Dance isn't the only thing I do. I'm learning programming, building projects, working on myself, and chasing many dreams. So I may not dance every day, and honestly, I'm still a shy person who doesn't easily dance in front of others.
 
-New mistakes.
+But I've made one promise to myself.
 
-New improvements.
+I won't stop dancing again.
 
-Dance isn't the only thing I do.
+This blog is my reminder of that promise. Whenever life gets busy, I want to come back here and remember why I started. Whenever I get time, I'll learn a new song, try new moves, make mistakes, improve a little, and share the journey here.
 
-I'm learning programming, building projects, working on myself, and chasing many dreams.
+Maybe I'll never become a professional dancer.
 
-But one thing is certain.
+Maybe I'll always forget a few steps.
+
+But as long as music makes me smile...
+
+I'll keep dancing.
+
+**See you in the next dance. ❤️🕺**
+
 
 This time...
 
 I won't leave dance behind again.
 
 **See you in the next dance . ❤️🕺**
+
+
