@@ -140,7 +140,7 @@ Just music.
 
 _(I'll attach that old video here.)_
 
-<video src="2 dance.mp4" controls width="350"></video>
+![[2 dance.mp4|300]]
 
 ---
 
