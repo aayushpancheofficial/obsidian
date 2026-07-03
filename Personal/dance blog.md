@@ -352,8 +352,12 @@ But it was one of my favorite moments.
 This reel reminds me where my journey started.
 
 🔗 https://www.instagram.com/reel/DaVmhW0hLoi/
-[![Watch on Instagram](https://img.shields.io/badge/📸-Watch%20Reel-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/reel/DaVmhW0hLoi/)
+<blockquote class="instagram-media"
+data-instgrm-permalink="https://www.instagram.com/reel/DaVmhW0hLoi/"
+data-instgrm-version="14">
+</blockquote>
 
+<script async src="https://www.instagram.com/embed.js"></script>
 
 
 
