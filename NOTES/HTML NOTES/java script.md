@@ -1,7 +1,8 @@
 
 # How I Learned JavaScript
 
-![[adda08ec91adec1382bc51b0361e8d61.gif]]
+<img width="500" height="281" alt="adda08ec91adec1382bc51b0361e8d61" src="https://github.com/user-attachments/assets/a58e1b6f-1516-4276-8dfd-a71d77c39497" />
+
 
 ## Let's Start Learning JavaScript 🚀
 
