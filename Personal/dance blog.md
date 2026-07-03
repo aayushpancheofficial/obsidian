@@ -141,6 +141,7 @@ Just music.
 _(I'll attach that old video here.)_
 
 ![[2 dance.mp4]]
+https://www.instagram.com/stories/highlights/18104827379018939/
 ---
 
 ## Then came college.
@@ -392,8 +393,12 @@ Dance if you feel like dancing.
 Sing if you feel like singing.
 
 Don't worry too much about what people will think. Most beautiful memories begin the moment you stop caring about others' opinions.
-
+==If you don't do what your heart wants today, what will you remember tomorrow? ❤️==
 See you in the next dance. ❤️🕺
 
+https://www.instagram.com/stories/highlights/18104827379018939/
+
+
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6xsAWxFIAqWl6X72tfED2A?utm_source=generator&si=42842ef9e363455b" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
 
