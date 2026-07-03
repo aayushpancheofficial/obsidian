@@ -140,7 +140,7 @@ Just music.
 
 _(I'll attach that old video here.)_
 
-![[2 dance|300]]
+![[2 dance.mp4|300]]
 
 ---
 
