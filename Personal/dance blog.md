@@ -139,8 +139,6 @@ No practice.
 Just music.
 
 _(I'll attach that old video here.)_
-
-![[2 dance.mp4]]
 https://www.instagram.com/stories/highlights/18104827379018939/
 ---
 
