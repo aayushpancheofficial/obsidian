@@ -349,6 +349,10 @@ It wasn't my best dance.
 
 But it was one of my favorite moments.
 
+This reel reminds me where my journey started.
+
+🔗 https://www.instagram.com/reel/DaVmhW0hLoi/
+
 
 
 
