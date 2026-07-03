@@ -138,8 +138,6 @@ No practice.
 
 Just music.
 
-_(I'll attach that old video here.)_
-https://www.instagram.com/stories/highlights/18104827379018939/
 ---
 
 ## Then came college.
