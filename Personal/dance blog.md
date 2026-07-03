@@ -139,6 +139,7 @@ No practice.
 Just music.
 
 _(I'll attach that old video here.)_
+
 ![[2 dance.mp4]]
 ---
 
@@ -367,33 +368,25 @@ For me, music and dance can never be separated. Music creates the emotion, and d
 
 ## This is just the beginning.
 
-I'll keep sharing my dance journey here.
+I'm not a great dancer, and I still have a lot to learn.
 
-Every new performance, every new song, every forgotten step, and every small improvement will become a part of this blog.
+I don't dance every day. In fact, I dance very rarely—only when I genuinely feel like it. I don't force it because, for me, dance is something that comes from the heart.
 
-Dance isn't the only thing I do. I'm learning programming, building projects, working on myself, and chasing many dreams. So I may not dance every day, and honestly, I'm still a shy person who doesn't easily dance in front of others.
+This blog is a promise to myself. Whenever life gets busy and I start forgetting this part of me, I'll come back here and remember why I fell in love with dance in the first place.
 
-But I've made one promise to myself.
+Whenever I learn a new move, perform on a stage, dance to a new song, or simply enjoy dancing alone in my room, I'll share it here.
 
-I won't stop dancing again.
+Dance and music make life a little more colorful. Without them, life feels a bit incomplete.
 
-This blog is my reminder of that promise. Whenever life gets busy, I want to come back here and remember why I started. Whenever I get time, I'll learn a new song, try new moves, make mistakes, improve a little, and share the journey here.
+So enjoy the music.
 
-Maybe I'll never become a professional dancer.
+Dance if you feel like dancing.
 
-Maybe I'll always forget a few steps.
+Sing if you feel like singing.
 
-But as long as music makes me smile...
+Don't worry too much about what people will think. Most beautiful memories begin the moment you stop caring about others' opinions.
 
-I'll keep dancing.
+See you in the next dance. ❤️🕺
 
-**See you in the next dance. ❤️🕺**
-
-
-This time...
-
-I won't leave dance behind again.
-
-**See you in the next dance . ❤️🕺**
 
 
