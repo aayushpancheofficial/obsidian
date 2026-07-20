@@ -1,4 +1,4 @@
-<img width="500" height="281" alt="5a8e72390a066bbede2cd33612760ca3" src="https://github.com/user-attachments/assets/87d3ebbf-0ef7-4c40-925e-5d035ecafc11" />
+<img width="540" height="249" alt="sknaop107_pindown io_1784572036" src="https://github.com/user-attachments/assets/d841ac23-a544-4589-af25-01fd7e3cca7b" />
 
 ### who i am
 I am a little dreamer, an introverted boy, sitting quietly in my room and listening to old songs while writing this blog.
