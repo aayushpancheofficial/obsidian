@@ -1,7 +1,7 @@
 
 #### 1 [[html]] 
 #### 2 [[css]]
-#### 3 [[How I Learned JavaScript]]
+#### 3 [[java script]]
 #### 4 [[Git_GitHub]]
 #### 5 [[React]]
 #### 6 [[Backend]]
