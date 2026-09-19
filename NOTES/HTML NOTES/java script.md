@@ -4,7 +4,7 @@
 <img width="500" height="281" alt="adda08ec91adec1382bc51b0361e8d61" src="https://github.com/user-attachments/assets/a58e1b6f-1516-4276-8dfd-a71d77c39497" />
 
 
-## Let's Start Learning JavaScript 🚀
+## Let's Start Learning JavaScript 
 
 JavaScript is one of the core languages of web development. If HTML is the structure of a website and CSS is its design, then JavaScript is the **brain** of the website. It adds logic, interactivity, and functionality.
 
