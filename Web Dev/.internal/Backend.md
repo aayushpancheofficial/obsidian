@@ -1,15 +1,14 @@
-Listed directory practice_videos_1_to_5
-
-Yahan aapke liye **Video 1 (Complete Backend Roadmap & Overview)** ke complete, clear aur structured notes hain:
+# BACKEND BLOG & NOTES
+<img width="500" height="276" alt="67ab8e7176bac7bbc6c8427645f0ba1e" src="https://github.com/user-attachments/assets/9c03b6ae-46d8-4258-a29e-971d7d60a70d" />
 
 ---
 
-# 📝 Chai aur Backend — Video 1 Notes
+# Chai aur Backend — Video 1 Notes
 **Topic**: Complete Backend Developer Roadmap & Overview (Backend Kya Hota Hai aur Hum Kya Bana Rahe Hain?)
 
 ---
 
-### 1️⃣ What is Backend Development? (Backend Kya Hota Hai?)
+### 1️ What is Backend Development? (Backend Kya Hota Hai?)
 - **Frontend**: Woh interface jo user ko screen par dikhta hai aur jisse user interact karta hai (React, HTML/CSS, UI/UX).
 - **Backend**: Engine under the hood jo logic execute karta hai, database se data fetch/save karta hai, security & authentication manage karta hai, aur client ko response bhejta hai.
 
@@ -62,4 +61,5 @@ Hitesh Sir ke iss series me hum ek **Complete Production-Grade YouTube Clone Bac
 
 ---
 
-Kya aapko Video 1 ke notes pasand aaye? Aap chahein toh main baaki videos (Video 2, 3, etc.) ke notes bhi generate karke de sakta hoon!
+# video 2
+
