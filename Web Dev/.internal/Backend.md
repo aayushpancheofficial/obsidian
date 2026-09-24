@@ -63,3 +63,46 @@ Hitesh Sir ke iss series me hum ek **Complete Production-Grade YouTube Clone Bac
 
 # video 2
 
+###Connecting Frontend and Backend: Understanding CORS , Same-Origin Policy, and Proxies
+Full-stack development me jab hum frontend (React/ Vue) ko backend (Node.js/ Express) se connect karte  hai, toh sabse pehle encountering error hota hai CORS Error.
+iss artical me hum browser security , Same-Origin Policy (SOP), aur CORS issues ko resolve karne ke tareeqon ko samjhenge.
+#### 1. What is same - origin policy (sop)?
+Modern web browsers me same-origin policy (sop) naam ka security mechanism hota hai. iska maqsad yeh ensure karna hai ki ek site ka script kisi dusri site ke data ko unauthorized read na kar sake.
+ek origin 3 compponents se milkar banta hai -
+Protocal : `http:// ya https://`
+Domain / `Hostname : localhost ya example.com`
+Port: `5173 ya :8000`
+Ager in teeno me se ek bhi component alag hai. toh browser uss request ko Cross-Origin maanta hai.
+
+Example Scenario:
+- **Frontend App**: `http://localhost:5173` (Vite / React)
+- **Backend App**: `http://localhost:8000` (Express server)
+Yahan Port numbers (`5173` vs `8000`) alag hone ki wajah se request cross-origin ho jaati hai. Browser security rules ki wajah se backend ka response frontend JavaScript ko milne se block ho jata hai.
+#### 2. What is CORS (Cross-Origin Resource Sharing)
+CORS ek HTTP-header-based ma=echanism hai jo backend server ko browser ko permission dene ki suvidha deta hai ki kaunsa external domainsuske APIs ko call kar sakte hain.
+jab frontend se cross-origin request jaati hai, toh browser pehle ek Preflight Request (OPTIONS HTTP methode) bhejta hai yeh verify karne ke liye ki backend request ko allow karta hai ya nhi.
+```
++------------------+          1. Preflight OPTIONS Request           +-------------------+
+|                  | ----------------------------------------------> |                   |
+| Frontend App     |                                                 | Express Backend   |
+| (localhost:5173) | <---------------------------------------------- | (localhost:8000)  |
++------------------+     2. Access-Control-Allow-Origin Header       +-------------------+
+```
+Essential CORS Header:
+- Access-control-Allow-Origin : Explicitly batata hai ki kaunsi domain/URL ko response access karne ki permission hai.
+- Access-control-allow-Credentials : indicates ki cookies ya authontication headers cross-origin pass ho sakte hain ya nhi.
+---
+#### 4.Resolving CORS Issues
+CORS issues ko solve karne ke 2 standard tareeqe hain:
+##### Method 1: Backend Middleware Setup
+Express backend me `cors` middelware configure karke permitted origins define kiye jaate hain:
+```javascript
+import express from "express";
+import cors from "cors";
+const app = express();
+app.use(corse({
+     origin: process.env.CORS_ORIGIN || "http://localhost:5173,
+     credentials: true
+}));
+
+
