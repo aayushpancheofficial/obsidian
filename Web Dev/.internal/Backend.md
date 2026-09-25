@@ -28,7 +28,7 @@
 
 ---
 
-### 2️⃣ Key Pillars of a Backend Application
+### 2️. Key Pillars of a Backend Application
 
 | Component | Technology Used | Purpose |
 | :--- | :--- | :--- |
@@ -40,7 +40,7 @@
 
 ---
 
-### 3️⃣ What We Are Building in "Chai aur Backend"
+### 3️. What We Are Building in "Chai aur Backend"
 Hitesh Sir ke iss series me hum ek **Complete Production-Grade YouTube Clone Backend** bana rahe hain:
 
 - 🔐 **User Management**: Registration, Login, Logout, Password Reset, Refresh Token rotation.
@@ -61,9 +61,9 @@ Hitesh Sir ke iss series me hum ek **Complete Production-Grade YouTube Clone Bac
 
 ---
 
-# video 2
+# VIDEO 2
 
-###Connecting Frontend and Backend: Understanding CORS , Same-Origin Policy, and Proxies
+### Connecting Frontend and Backend: Understanding CORS , Same-Origin Policy, and Proxies
 Full-stack development me jab hum frontend (React/ Vue) ko backend (Node.js/ Express) se connect karte  hai, toh sabse pehle encountering error hota hai CORS Error.
 iss artical me hum browser security , Same-Origin Policy (SOP), aur CORS issues ko resolve karne ke tareeqon ko samjhenge.
 #### 1. What is same - origin policy (sop)?
@@ -92,7 +92,7 @@ Essential CORS Header:
 - Access-control-Allow-Origin : Explicitly batata hai ki kaunsi domain/URL ko response access karne ki permission hai.
 - Access-control-allow-Credentials : indicates ki cookies ya authontication headers cross-origin pass ho sakte hain ya nhi.
 ---
-#### 4.Resolving CORS Issues
+#### 3.Resolving CORS Issues
 CORS issues ko solve karne ke 2 standard tareeqe hain:
 ##### Method 1: Backend Middleware Setup
 Express backend me `cors` middelware configure karke permitted origins define kiye jaate hain:
@@ -104,5 +104,154 @@ app.use(corse({
      origin: process.env.CORS_ORIGIN || "http://localhost:5173,
      credentials: true
 }));
+```
+##### Method 2 : Vite Development Proxy (Frontend-level-solution)
+During local development, configuring a proxy in the frontend bundler (such as vite) tricks the browser into believing that frontend requests originate frfome the same domain.
+in `vite.config.js`:
+```javascripts
+import { defineConfig } from 'vite';
+import react from '@vitejs.plugin-react';
 
+export default defineConfig({
+  server: {
+    proxy: {
+      '/api' : 'http://localhost:8000',
+    },
+   },
+     plugins: [react()],
+});
+```
+With this configuration:
+- Forntend calls /api/v!/users relative path.
+- vite intercepts the call and forwords it to `http://localost:8000/api/v!/users`
+- The browser sees a same-origin reuest to port `5173`.
+  avoiding CORS checks entirely during development.
+
+#### 4. Key Tskeways 
+1. CORS is a Browser Security feature: servers actually process the request; it is the browser that blocks the client from receiving the response if Cors headers are missing.
+2. Environment Variables: Avoid hardcoding `http://localhost:5173` in backend production code. Use `process.env.CORS_ORIGIN`.
+3. Environment Variables: Avoid hardcoding `http://localhost:5173` in backend production code. Use process.env.CORS_ORIGIN.
+
+# VIDEO 3
+
+### Data Modelling in Backend: Designing Schemas with Mongoose
+
+Koi bhi full-stack ya backend application build karne se pehle sabse important step hota hai **Data Modelling**. Agar aapka data model ache se design nahi hai, toh aage chalkar database queries slow hongi, application crash hogi, aur codebase unmaintainable ho jayega.
+
+Iss article me hum samjhenge ki Data Modelling kya hoti hai, Mongoose Schemas kaise kaam karte hain, aur references/relationships kaise design kiye jaate hain.
+
+---
+
+#### 1. What is Data Modelling?
+
+Data Modelling ka matlab hai aapke application ke data structures ka blueprint banana. Yeh decide karta hai ki:
+- Data kis format me save hoga (Fields, Types, Validations).
+- Konsi fields required hain aur konsi optional.
+- Models ke beech me aapas me kya relationship hai (One-to-One, One-to-Many, Many-to-Many).
+
+Visual tools jaise **Eraser.io** ya **Moon Modeler** ka use karke pehle database diagram banana best practice maana jata hai.
+
+---
+
+#### 2. Basic Mongoose Schema Structure
+
+MongoDB ek NoSQL document database hai. Mongoose ek Object Data Modeling (ODM) library hai jo MongoDB ke collections ko JavaScript objects ke roop me define aur validate karne me help karti hai.
+
+```javascript
+import mongoose from "mongoose";
+
+const userSchema = new mongoose.Schema(
+    {
+        username: {
+            type: String,
+            required: true,
+            unique: true,
+            lowercase: true,
+            trim: true,
+            index: true // Searching fast karne ke liye
+        },
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            lowercase: true,
+            trim: true
+        },
+        fullName: {
+            type: String,
+            required: true,
+            trim: true,
+            index: true
+        },
+        password: {
+            type: String,
+            required: [true, 'Password is required']
+        }
+    },
+    {
+        timestamps: true // createdAt aur updatedAt fields automatically add karta hai
+    }
+);
+
+export const User = mongoose.model("User", userSchema);
+```
+
+---
+
+#### 3. Key Concepts in Mongoose Schemas
+
+### a. `{ timestamps: true }`
+Mongoose schema options me `{ timestamps: true }` dene se MongoDB automatically do internal fields create aur update karta hai:
+- `createdAt`: Document kab create hua.
+- `updatedAt`: Document kab last modify hua.
+
+### b. Indexing (`index: true`)
+Kisi field par `index: true` lagane se database search optimization hoti hai. Jaise `username` ya `fullName` par indexing lagane se username lookup performance significantly improve hoti hai.
+
+### c. Database Relationships (`ObjectId` & `ref`)
+MongoDb me collections ke aapas me relationship banane ke liye `mongoose.Schema.Types.ObjectId` aur `ref` property ka use hota hai:
+
+```javascript
+const videoSchema = new mongoose.Schema(
+    {
+        videoFile: {
+            type: String, // Cloudinary URL
+            required: true
+        },
+        title: {
+            type: String,
+            required: true
+        },
+        owner: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User" // User model ke saath relation
+        }
+    },
+    { timestamps: true }
+);
+
+export const Video = mongoose.model("Video", videoSchema);
+```
+
+---
+
+## 4. Model Naming Convention in MongoDB
+
+Jab hum model define karte hain:
+`mongoose.model("User", userSchema)`
+
+Mongoose background me standard rules follow karta hai:
+1. Model ka naam lowercase karta hai: `"User"` ➔ `"user"`
+2. Name ko pluralize karta hai: `"user"` ➔ `"users"`
+3. MongoDB database me collection ka naam **`users`** banta hai.
+
+---
+
+## 5. Core Takeaways
+
+1. **Design Before Code**: Pehle architecture aur schema relationships paper ya visual tool par design karein.
+2. **Strict Validations**: Required fields, lowercase, trim, aur custom error messages schema level par add karein.
+3. **Use Indexes Wisely**: High-frequency search fields (jaise `username`, `email`) par `index: true` add karein, lekin unnecessary indexes se bachein kyunki indexing write operations ko slightly slow karti hai.
+
+---
 
