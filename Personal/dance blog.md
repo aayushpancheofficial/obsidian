@@ -1,3 +1,6 @@
+hide: true
+---
+
 # Dance and Me
 
 I was never a trained dancer.
