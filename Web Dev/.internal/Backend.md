@@ -200,15 +200,15 @@ export const User = mongoose.model("User", userSchema);
 
 #### 3. Key Concepts in Mongoose Schemas
 
-### a. `{ timestamps: true }`
+##### a. `{ timestamps: true }`
 Mongoose schema options me `{ timestamps: true }` dene se MongoDB automatically do internal fields create aur update karta hai:
 - `createdAt`: Document kab create hua.
 - `updatedAt`: Document kab last modify hua.
 
-### b. Indexing (`index: true`)
+##### b. Indexing (`index: true`)
 Kisi field par `index: true` lagane se database search optimization hoti hai. Jaise `username` ya `fullName` par indexing lagane se username lookup performance significantly improve hoti hai.
 
-### c. Database Relationships (`ObjectId` & `ref`)
+##### c. Database Relationships (`ObjectId` & `ref`)
 MongoDb me collections ke aapas me relationship banane ke liye `mongoose.Schema.Types.ObjectId` aur `ref` property ka use hota hai:
 
 ```javascript
@@ -235,7 +235,7 @@ export const Video = mongoose.model("Video", videoSchema);
 
 ---
 
-## 4. Model Naming Convention in MongoDB
+#### 4. Model Naming Convention in MongoDB
 
 Jab hum model define karte hain:
 `mongoose.model("User", userSchema)`
@@ -247,7 +247,7 @@ Mongoose background me standard rules follow karta hai:
 
 ---
 
-## 5. Core Takeaways
+#### 5. Core Takeaways
 
 1. **Design Before Code**: Pehle architecture aur schema relationships paper ya visual tool par design karein.
 2. **Strict Validations**: Required fields, lowercase, trim, aur custom error messages schema level par add karein.
