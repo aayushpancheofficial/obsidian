@@ -4,7 +4,7 @@
 ##### My Story — A Small-Town Boy With Bigger Dreams
 *This is not a success story. It's just a little part of my journey, so far.*
 
-####### 01. Childhood — A Quiet Boy
+##### 01. Childhood — A Quiet Boy
 
 Hi, I'm Aayush.
 
@@ -93,12 +93,11 @@ And that feeling was special.
 
 ---
 
-<span style="color:red">**To be continued...**</span>
-
-*— Aayush*
+ <span style="color:red">**To be continued...**</span>
+  *— Aayush*
 ---
+
 ### *what i want*
-___
 
 ### A life beyond ordinary
 
