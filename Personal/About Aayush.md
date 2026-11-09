@@ -45,39 +45,26 @@ Because in the end, real happiness comes from growth, respect, and purpose
 
 #### ❤️ Videos
 
-<iframe
-  width="100%"
-  height="450"
-  src="https://www.youtube.com/embed/1ECAgkuKQ3c"
-  title="YouTube Video Player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen>
-</iframe>
-<div style="position: relative; width: 100%; aspect-ratio: 16/9;">
-  <iframe
-    src="https://www.youtube-nocookie.com/embed/S8F9lCboB_8"
-    title="YouTube Video"
-    style="width: 100%; height: 100%; border: 0; border-radius: 12px;"
-    allowfullscreen>
-  </iframe>
-</div>
-<iframe
-  width="100%"
-  height="450"
-  src="https://www.youtube.com/embed/2s5Ko9qINJM"
-  title="YouTube Video"
-  frameborder="0"
-  allowfullscreen>
-</iframe>
-<iframe
-  width="100%"
-  height="450"
-  src="https://www.youtube.com/embed/AnEGaKtbs2E"
-  title="YouTube Video"
-  frameborder="0"
-  allowfullscreen>
-</iframe>
+
+<table>
+  <tr>
+    <td width="50%">
+      <iframe width="100%" src="https://www.youtube.com/embed/1ECAgkuKQ3c" title="Video 1" allowfullscreen></iframe>
+    </td>
+    <td width="50%">
+      <iframe width="100%" src="https://www.youtube.com/embed/S8F9lCboB_8" title="Video 2" allowfullscreen></iframe>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <iframe width="100%" src="https://www.youtube.com/embed/2s5Ko9qINJM" title="Video 3" allowfullscreen></iframe>
+    </td>
+    <td width="50%">
+      <iframe width="100%" src="https://www.youtube.com/embed/AnEGaKtbs2E" title="Video 4" allowfullscreen></iframe>
+    </td>
+  </tr>
+</table>
+
 
 
 #### Quotes
@@ -90,9 +77,6 @@ Because in the end, real happiness comes from growth, respect, and purpose
 
 > *"Man is made by his belief. As he believes, so he is."*
   — Bhagavad Gita
-
-"People's lives don't end when they die. It ends when they lose faith."
-— Itachi Uchiha (paraphrased)
-
+> 
 > *"If the pain doesn't kill me, it will only make me stronger."*
  — Sung Jin-Woo, Solo Leveling
