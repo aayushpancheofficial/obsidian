@@ -55,7 +55,7 @@ Because in the end, real happiness comes from <span style="color:red">growth, re
 
 > *"Man is made by his belief. As he believes, so he is."*
   — Bhagavad Gita
-> 
+
 > *"If the pain doesn't kill me, it will only make me stronger."*
  — Sung Jin-Woo, Solo Leveling
 
