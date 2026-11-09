@@ -24,7 +24,8 @@ I didn't know exactly how, but I knew I had to do something with my life.
 I used to take my mobile phone to different places to watch videos because the internet connection at home wasn't very good.
 That's when I started discovering the world of engineering, JEE, and IITs.
 I began watching IIT-related videos and blogs. One person who inspired me a lot was Narendra Raj. I used to watch his content and follow his journey.
-[Watch Narendra Raj's YouTube playlist](https://youtube.com/playlist?list=PL3AHyLJ-C2l9GkIAMcF5uQyZfeZUHP0cT)
+[Watch Narendra Raj's YouTube playlist](https://youtube.com/playlist?list=PL3AHyLJ-C2l9GkIAMcF5uQyZfeZUHP0cT).
+
 Slowly, I became fascinated by IIT Guwahati.
 I don't know exactly why, but I started imagining myself there. I imagined the campus, the people, the environment, and the kind of life I could experience.
 For me, IIT Guwahati wasn't just a college. It represented the life I wanted to live — a life beyond the boundaries of my small village.
