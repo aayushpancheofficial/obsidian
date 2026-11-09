@@ -51,7 +51,17 @@ Because in the end, real happiness comes from growth, respect, and purpose
 
 ### Watch the Video
 
-[![Watch Video](https://img.youtube.com/vi/1ECAgkuKQ3c/maxresdefault.jpg)](https://youtu.be/1ECAgkuKQ3c)
+
+<iframe
+  width="100%"
+  height="450"
+  src="https://www.youtube.com/embed/1ECAgkuKQ3c"
+  title="YouTube Video Player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen>
+</iframe>
+
 
 #### Quotes
 
