@@ -31,7 +31,7 @@ ___
 ### A life beyond ordinary
 
 I don't want an ordinary life. I want to explore the world, take risks, build something of my own, and experience everything life has to offer.
-I want to keep learning, growing, and challenging myself. I don't want money or society's expectations to decide how I live. **Freedom matters to me.**
+I want to keep learning, growing, and challenging myself. I don't want money or society's expectations to decide how I live. <span style="color:red">Freedom matters to me.</span>
 My dreams are simple, even if the journey isn't:
 
 - Become a highly skilled engineer.
@@ -39,7 +39,7 @@ My dreams are simple, even if the journey isn't:
 - Earn respect through my work.
 - Make my parents proud.
 - Live a life full of experiences, not regrets.
-Because in the end, real happiness comes from growth, respect, and purpose
+Because in the end, real happiness comes from <span style="color:red">growth, respect, and purpose </span>
 
 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2Z6NuidijVp8AAAqN5moZ1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
