@@ -93,8 +93,8 @@ And that feeling was special.
 
 ---
 
- <span style="color:red">**To be continued...**</span>
-  *— Aayush*
+ ##### <span style="color:red">**To be continued...**</span>
+ ##### *— Aayush*
 ---
 
 ### *what i want*
