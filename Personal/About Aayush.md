@@ -1,29 +1,101 @@
 <img width="540" height="249" alt="sknaop107_pindown io_1784572036" src="https://github.com/user-attachments/assets/d841ac23-a544-4589-af25-01fd7e3cca7b" />
 
 ### who i am
-I am a little dreamer, an introverted boy, sitting quietly in my room and listening to old songs while writing this blog.
+##### My Story — A Small-Town Boy With Bigger Dreams
+*This is not a success story. It's just a little part of my journey, so far.*
 
-I do not know everything about life yet, but I know one thing clearly: I want to achieve my purpose. I want to do something meaningful. I want to create something different, something that truly belongs to me.
+####### 01. Childhood — A Quiet Boy
 
-Sometimes, I feel silent from the outside, but inside my mind, there are so many thoughts, dreams, and questions. I may not speak much, but I observe a lot. Basically, outside I look calm, but inside my brain is running like a full-time overthinking factory.
+Hi, I'm Aayush.
 
-I think deeply about my future, my goals, and the person I want to become. Sometimes I make big plans at night, and the next morning life says, “First complete your pending work, hero.” Still, I try again.
+I was born in a small village. Since childhood, I have been a very introverted and shy person. I was never the kind of boy who talked a lot, made many friends, or easily mixed with people.
+I was quiet most of the time.
+Even in school, I wasn't a particularly good student. In fact, I was quite weak in studies. I wasn't very mischievous, nor was I a topper or a hardworking student. I was just an ordinary boy who went to school, sat quietly, listened to teachers, and came back home.
+I still remember that I couldn't even write properly until around 4th standard. Theoretical subjects were especially difficult for me. Honestly, I didn't have any favourite subject, although Mathematics was probably the one in which I scored comparatively better.
 
-Right now, I am sitting in my room, surrounded by the calm feeling of old songs. These songs make me think about life, memories, dreams, and the journey ahead. Old songs have a different magic. They make you feel like you are the main character of a movie, even if you are just sitting in a normal room with normal problems.
+That's why I eventually chose Mathematics in 11th and 12th.
 
-In this quiet moment, I feel connected to myself. No crowd, no pressure, no fake smile. Just me, my thoughts, and a playlist that understands my mood better than most people.
+##### 02. School Days — The First Dream
 
-I am not perfect. I am still learning, still growing, and still trying to understand my path. Sometimes I feel motivated like I can change the world, and sometimes I feel like I need one more cup of tea before changing even my bedsheet.
+Until 10th standard, I studied in a small school in my village.
+Things started changing when I entered 11th standard. COVID arrived, schools closed, and everything went online.
+During that time, I started realising something: **I wanted to get out of my village and experience a bigger world.**
+I didn't know exactly how, but I knew I had to do something with my life.
+I used to take my mobile phone to different places to watch videos because the internet connection at home wasn't very good.
+That's when I started discovering the world of engineering, JEE, and IITs.
+I began watching IIT-related videos and blogs. One person who inspired me a lot was Narendra Raj. I used to watch his content and follow his journey.
+[Watch Narendra Raj's YouTube playlist](https://youtube.com/playlist?list=PL3AHyLJ-C2l9GkIAMcF5uQyZfeZUHP0cT)
+Slowly, I became fascinated by IIT Guwahati.
+I don't know exactly why, but I started imagining myself there. I imagined the campus, the people, the environment, and the kind of life I could experience.
+For me, IIT Guwahati wasn't just a college. It represented the life I wanted to live — a life beyond the boundaries of my small village.
+I fell in love with that dream.
 
-But I have a strong desire to become better every day. I want to improve myself, build my skills, and create a life that makes me proud. I know the journey will not be easy, but easy things never create interesting stories.
+##### 03. JEE Preparation — Trying My Best
 
-Maybe I am just a simple boy today, but I believe there is something special inside me. I want to find it, shape it, and show it to the world. Maybe slowly, maybe silently, but definitely.
+I enrolled in a JEE preparation batch and started studying seriously.
+For the first time in my life, I had a clear goal.
+I remember studying almost 20 hours a day during one phase of my preparation. I was pushing myself because I wanted to make that dream come true.
+When I entered 12th standard, things became more difficult. I wasn't attending school regularly and spent much of my time studying JEE topics, including chapters from 11th standard.
+My concepts were slowly improving, and I started understanding things better.
+But things didn't go as planned.
+My 12th board exams arrived, along with JEE, and I couldn't manage both properly. My mind wasn't working the way I wanted it to. I was under pressure, confused, and unable to perform well.
+The result was painful.
+I couldn't clear JEE, and I also failed my 12th board examination.
+I cried a lot.
+It was probably the first time my family had to scold me seriously about my studies. I felt disappointed in myself because I had worked so hard and imagined a completely different outcome.
+Eventually, I cleared my 12th through the supplementary examination.
+But I still didn't know what to do next.
 
-This is not just a random thought. This is the beginning of my journey.
+##### 04. Kota — One More Attempt
+<img width="1600" height="1201" alt="WhatsApp Image 2026-11-09 at 10 38 10 PM" src="https://github.com/user-attachments/assets/8b560ab5-85ad-4809-9811-1cf3e6b0380e" />
 
-A journey of a little dreamer who wants to achieve his purpose in life, do something different, and maybe one day look back and say, “Yes, bro, we really did it.”
+I wasn't ready to give up on my dream.
+I wanted to experience the life I had imagined for myself, so I decided to take a drop year and go to Kota for JEE preparation.
+I'm genuinely thankful to my family for supporting me and allowing me to go there.
+I joined a coaching batch and started preparing again.
+But Kota was a completely different world.
+Everywhere I looked, I saw students who were incredibly focused and hardworking. Some studied day and night. The competition was intense, and honestly, it scared me.
+<img width="1201" height="1600" alt="WhatsApp Image 2026-11-09 at 10 37 55 PM" src="https://github.com/user-attachments/assets/f14db324-23f7-4633-91ba-391f531ba917" />
 
+I realised how much I still had to learn.
+I tried, but things didn't work out this time either.
+I couldn't clear JEE.
+I became demotivated. It was difficult to accept that the dream I had carried for so long wasn't becoming reality.
+After discussing things with my elder brother, I decided to join a private engineering college.
+I moved forward, but somewhere inside, I still had regret.
+Sometimes I wondered whether all those years of preparation, expectations, and dreams had gone to waste.
 
+##### 05. College Life — A New Beginning
+
+I joined SSIPMT Raipur to pursue B.Tech in Computer Science and Engineering.
+My first year was quite different from my school life.
+I started enjoying college life. I played outdoor games, tried different activities, and explored things I hadn't experienced much before.
+I played badminton and basketball, enjoyed dancing, and spent time doing things I liked.
+It was a different side of me.
+Another challenge was English.
+Coming from a Hindi-medium background, I struggled with English communication. Understanding technical concepts was one thing, but expressing my thoughts in English was another challenge.
+I still had a lot to improve.
+But slowly, things started changing.
+
+##### 06. Discovering Technology
+
+During my second year, I started looking at technology more seriously.
+I became interested in web development and started learning how websites actually work.
+I explored HTML, CSS, JavaScript, and eventually React and backend development.
+I also remembered something I had enjoyed since my school days — animation and design.
+I used to enjoy creating designs and exploring visual creativity. So I started experimenting with website designs, animations, and different ideas.
+Sometimes I learned by watching tutorials, sometimes by experimenting, and sometimes by simply trying to build something myself.
+I started creating websites, exploring new tools, experimenting with designs, and building things using code and AI tools.
+Eventually, I built my own portfolio website.
+It wasn't perfect, but it was something I had created myself.
+For the first time, I started feeling that I was not just learning technology — I was actually building things.
+And that feeling was special.
+
+---
+
+<span style="color:red">**To be continued...**</span>
+
+*— Aayush*
 ---
 ### *what i want*
 ___
