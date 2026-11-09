@@ -27,30 +27,23 @@ A journey of a little dreamer who wants to achieve his purpose in life, do somet
 ---
 ### *what i want*
 ___
-I am currently in my second year, and today I want to write honestly about my life.
 
-I don’t want an average life. I want something bigger—something meaningful. I want achievements that make me feel alive.
+### A life beyond ordinary
 
-A simple, routine life doesn’t excite me. I want growth, responsibility, and challenges. I once saw someone living the life I dream of—working hard, living in a big city, and building something of his own. That’s what I want.
+I don't want an ordinary life. I want to explore the world, take risks, build something of my own, and experience everything life has to offer.
+I want to keep learning, growing, and challenging myself. I don't want money or society's expectations to decide how I live. **Freedom matters to me.**
+My dreams are simple, even if the journey isn't:
 
-Sometimes I forget my purpose, but deep inside, I know I want to explore, learn, and live freely. I don’t want to feel restricted.
-
-**Freedom matters to me.**  
-Not being controlled by money stress or society’s expectations. I want to live fully, and I believe money will follow my work, not control it.
-
-My goal is clear:
-
-- To become a highly skilled engineer
-- To gain real knowledge
-- To do work that earns respect and appreciation
-- To make my parents proud
-
+- Become a highly skilled engineer.
+- Build something meaningful.
+- Earn respect through my work.
+- Make my parents proud.
+- Live a life full of experiences, not regrets.
 Because in the end, real happiness comes from growth, respect, and purpose
 
 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2Z6NuidijVp8AAAqN5moZ1?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
-### Watch the Video
-
+#### ❤️ Videos
 
 <iframe
   width="100%"
@@ -61,24 +54,45 @@ Because in the end, real happiness comes from growth, respect, and purpose
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   allowfullscreen>
 </iframe>
+<div style="position: relative; width: 100%; aspect-ratio: 16/9;">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/S8F9lCboB_8"
+    title="YouTube Video"
+    style="width: 100%; height: 100%; border: 0; border-radius: 12px;"
+    allowfullscreen>
+  </iframe>
+</div>
+<iframe
+  width="100%"
+  height="450"
+  src="https://www.youtube.com/embed/2s5Ko9qINJM"
+  title="YouTube Video"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
+<iframe
+  width="100%"
+  height="450"
+  src="https://www.youtube.com/embed/AnEGaKtbs2E"
+  title="YouTube Video"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
 
 
 #### Quotes
 
-> *"If it was easy, anyone could have done it."*
-> — 
-
-> *"A man who is master of patience is master of everything else."*
-> — George Savile
+>"I want to explore the world, understand its mysteries, and live a life that is truly my own."
+ — Aayush Panche 
 
 > *"If you don't build your own dream, someone will hire you to build theirs."*
-> — Jim Rohn
+  — Jim Rohn
 
 > *"Man is made by his belief. As he believes, so he is."*
-> — Bhagavad Gita
+  — Bhagavad Gita
 
-> *"Arise, awake, and stop not till the goal is reached."*
-> — Katha Upanishad
+"People's lives don't end when they die. It ends when they lose faith."
+— Itachi Uchiha (paraphrased)
 
 > *"If the pain doesn't kill me, it will only make me stronger."*
-> — Sung Jin-Woo, Solo Leveling
+ — Sung Jin-Woo, Solo Leveling
