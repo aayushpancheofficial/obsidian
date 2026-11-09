@@ -45,7 +45,7 @@ Because in the end, real happiness comes from growth, respect, and purpose
 
 
 
-#### Quotes
+### Quotes
 
 >"I want to explore the world, understand its mysteries, and live a life that is truly my own."
  — Aayush Panche 
@@ -60,7 +60,7 @@ Because in the end, real happiness comes from growth, respect, and purpose
  — Sung Jin-Woo, Solo Leveling
 
 
-#### ❤️ Videos
+### ❤️ Videos
 
 <table>
   <tr>
@@ -95,7 +95,7 @@ Because in the end, real happiness comes from growth, respect, and purpose
 </p>
 
 
-#### 🖥 Anime I Love
+### 🖥 Anime I Love
 
 <table>
   <tr>
@@ -137,7 +137,7 @@ Because in the end, real happiness comes from growth, respect, and purpose
       <br>Teamwork · Passion
     </td>
     <td width="25%">
-      <img src="https://www.fashion-press.net/img/news/114930/k0o.jpg" width="100%" alt="5 Centimeters per Second">
+      <img src="https://image.tmdb.org/t/p/w342/dFipUR6W0y3PPkuVS8gjFd929m2.jpg" width="100%" alt="5 Centimeters per Second">
       <strong>5 Centimeters per Second</strong>
       <br>Distance · Memories
     </td>
