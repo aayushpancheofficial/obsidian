@@ -134,37 +134,47 @@ Because in the end, real happiness comes from <span style="color:red">growth, re
 
 ### ❤️ Videos
 
+
 <table>
   <tr>
     <td width="50%">
       <iframe width="100%" height="240"
         src="https://www.youtube.com/embed/1ECAgkuKQ3c"
-        allowfullscreen></iframe>
+        title="Video 1" allowfullscreen></iframe>
     </td>
     <td width="50%">
       <iframe width="100%" height="240"
-        src="https://youtu.be/PB_AXgSnAFc?si=1YtTtzv-p8WtORro"
-        allowfullscreen></iframe>
+        src="https://www.youtube.com/embed/PB_AXgSnAFc"
+        title="Video 2" allowfullscreen></iframe>
     </td>
   </tr>
   <tr>
     <td width="50%">
       <iframe width="100%" height="240"
         src="https://www.youtube.com/embed/2s5Ko9qINJM"
-        allowfullscreen></iframe>
+        title="Video 3" allowfullscreen></iframe>
     </td>
     <td width="50%">
       <iframe width="100%" height="240"
         src="https://www.youtube.com/embed/AnEGaKtbs2E"
-        allowfullscreen></iframe>
+        title="Video 4" allowfullscreen></iframe>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <iframe width="100%" height="240"
+        src="https://www.youtube.com/embed/S8F9lCboB_8"
+        title="Video 5" allowfullscreen></iframe>
     </td>
   </tr>
 </table>
+
 <p align="center">
-  <a href="https://youtube.com/playlist?list=PLRyKnb8ObfM6lF_2yDbMDZ_I2JXmrXsJ3" target="_blank">
-    <img src="https://img.shields.io/badge/▶%20More%20Videos-Explore%20Playlist-red?style=for-the-badge&logo=youtube" alt="More Videos">
+  <a href="https://youtube.com/playlist?list=PLRyKnb8ObfM6lF_2yDbMDZ_I2JXmrXsJ3">
+    <img src="https://img.shields.io/badge/▶%20More%20Videos-Explore%20Playlist-red?style=flat-square&logo=youtube" alt="More Videos">
   </a>
 </p>
+
 
 
 ### 🖥 Anime I Love
