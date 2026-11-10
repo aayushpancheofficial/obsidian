@@ -143,7 +143,7 @@ Because in the end, real happiness comes from <span style="color:red">growth, re
     </td>
     <td width="50%">
       <iframe width="100%" height="240"
-        src="https://www.youtube.com/embed/S8F9lCboB_8"
+        src="https://youtu.be/PB_AXgSnAFc?si=1YtTtzv-p8WtORro"
         allowfullscreen></iframe>
     </td>
   </tr>
