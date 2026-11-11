@@ -119,8 +119,8 @@ Because in the end, real happiness comes from <span style="color:red">growth, re
 
 ### Quotes
 
->To become who you've always dreamed of, you must sacrifice who you've always been🪦"
- — Aayush Panche 
+>"Every dream demands a sacrifice. The question is, how much are you willing to give?🪦"
+ — Aayush
 
 > *"If you don't build your own dream, someone will hire you to build theirs."*
   — Jim Rohn
