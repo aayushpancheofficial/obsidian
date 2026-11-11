@@ -119,7 +119,7 @@ Because in the end, real happiness comes from <span style="color:red">growth, re
 
 ### Quotes
 
->"I want to explore the world, understand its mysteries, and live a life that is truly my own."
+>To become who you've always dreamed of, you must sacrifice who you've always been🪦"
  — Aayush Panche 
 
 > *"If you don't build your own dream, someone will hire you to build theirs."*
