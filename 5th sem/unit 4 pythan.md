@@ -74,3 +74,129 @@ Pandas is built on top of NumPy and uses NumPy functionality internally for many
 #### 6. Conclusion
 
 In conclusion, NumPy is mainly used for numerical computations and array operations, whereas Pandas is used for data manipulation and analysis. Both libraries are important tools in Python programming and data science.
+
+### Pandas DataFrame
+
+#### 1. Definition of Pandas DataFrame
+
+A Pandas DataFrame is a two-dimensional, size-mutable and labeled data structure in Python. It consists of rows and columns and can store different types of data such as integers, strings and floating-point values.
+
+It is similar to an Excel spreadsheet or a database table.
+
+**Main Features of DataFrame:**
+
+1. It contains rows and columns.
+2. It supports different data types.
+3. Each row and column has labels.
+4. Data can be added, deleted and modified.
+5. It is used for data analysis and manipulation.
+
+#### 2. Can We Create an Empty DataFrame?
+
+Yes, we can create an empty DataFrame in Pandas using the `pd.DataFrame()` constructor without passing any data.
+
+**Syntax:**
+
+```python
+import pandas as pd
+
+df = pd.DataFrame()
+print(df)
+```
+
+**Output:**
+
+```text
+Empty DataFrame
+Columns: []
+Index: []
+```
+
+An empty DataFrame contains no rows and no columns. We can add data to it later.
+
+#### 3. Creating a DataFrame from Lists
+
+We can create a DataFrame from Python lists using the `pd.DataFrame()` function.
+
+**Example:**
+
+```python
+import pandas as pd
+
+data = [
+    ['Aman', 85],
+    ['Rahul', 90],
+    ['Ravi', 78]
+]
+
+df = pd.DataFrame(data, columns=['Name', 'Marks'])
+
+print(df)
+```
+
+**Output:**
+
+```text
+    Name  Marks
+0   Aman     85
+1  Rahul     90
+2   Ravi     78
+```
+
+**Explanation:**
+
+- First, we import the Pandas library.
+- A list containing students' names and marks is created.
+- The `pd.DataFrame()` function converts the list into a DataFrame.
+- The `columns` parameter assigns column names.
+- Finally, the DataFrame is displayed.
+
+#### 4. Creating a DataFrame from Series
+
+A Series is a one-dimensional labeled data structure in Pandas. We can combine multiple Series to create a DataFrame.
+
+**Example:**
+
+```python
+import pandas as pd
+
+name = pd.Series(['Aman', 'Rahul', 'Ravi'])
+marks = pd.Series([85, 90, 78])
+
+df = pd.DataFrame({
+    'Name': name,
+    'Marks': marks
+})
+
+print(df)
+```
+
+**Output:**
+
+```text
+    Name  Marks
+0   Aman     85
+1  Rahul     90
+2   Ravi     78
+```
+
+**Explanation:**
+
+- First, we create two Series: `name` and `marks`.
+- Each Series contains labeled data.
+- Both Series are combined using the `pd.DataFrame()` function.
+- The resulting DataFrame contains two columns: Name and Marks.
+
+Note: Pandas aligns Series data according to their index labels.
+
+#### 5. Applications of Pandas DataFrame
+
+1. Used to store and organize structured data.
+2. Used for data cleaning and data manipulation.
+3. Used to analyze large datasets.
+4. Used in machine learning and data science.
+5. Used to read and write CSV and Excel files.
+
+#### 6. Conclusion
+
+A Pandas DataFrame is an important data structure used for handling tabular data in Python. We can create a DataFrame from lists, Series, dictionaries and other data sources. We can also create an empty DataFrame and add data to it later.
