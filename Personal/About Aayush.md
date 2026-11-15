@@ -97,10 +97,9 @@ And that feeling was special.
  ##### <span style="color:red">**To be continued...**</span>
  ##### *— Aayush*
 ---
-
 ### *what i want*
 
-### A life beyond ordinary
+#### A life beyond ordinary
 
 I don't want an ordinary life. I want to explore the world, take risks, build something of my own, and experience everything life has to offer.
 I want to keep learning, growing, and challenging myself. I don't want money or society's expectations to decide how I live. <span style="color:red">Freedom matters to me.</span>
