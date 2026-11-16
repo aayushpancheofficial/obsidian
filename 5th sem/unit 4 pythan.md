@@ -218,7 +218,7 @@ Pandas Series and DataFrame are important data structures used in Python for dat
 
 ### Q3) Explain Categorical Data in Pandas. How do you create and work with categorical data? Give a suitable example.
 
-### #1. Introduction
+#### 1. Introduction
 
 Categorical data is a type of data that represents a limited number of categories or groups. It is used to store values that belong to predefined categories instead of continuous numerical values.
 
@@ -831,15 +831,15 @@ Pandas provides useful functions such as `read_csv()` and `to_csv()` to read and
 
 ## Others
 
-# Q1. How do you compute correlation in Pandas? Explain with a suitable example and interpret the result.
+### Q1. How do you compute correlation in Pandas? Explain with a suitable example and interpret the result.
 
-### 1. Introduction
+#### 1. Introduction
 
 Correlation is a statistical method used to measure the strength and direction of the relationship between two numerical variables.
 
 In Pandas, the `corr()` function is used to calculate the correlation between numerical columns of a DataFrame.
 
-### 2. Types of Correlation
+#### 2. Types of Correlation
 
 **1. Positive Correlation:**
 
@@ -859,7 +859,7 @@ When there is no clear linear relationship between two variables.
 
 Example: Shoe size and examination marks.
 
-### 3. Correlation Coefficient
+#### 3. Correlation Coefficient
 
 The correlation coefficient is represented by `r`. Its value ranges from -1 to +1.
 
@@ -871,7 +871,7 @@ The correlation coefficient is represented by `r`. Its value ranges from -1 to +
 | -1 to 0 | Negative correlation |
 | -1 | Perfect negative correlation |
 
-### 4. Syntax
+#### 4. Syntax
 
 ```python
 df.corr()
@@ -904,7 +904,7 @@ Study_Hours     1.000000  0.991837
 Marks           0.991837  1.000000
 ```
 
-### 6. Interpretation of Result
+#### 6. Interpretation of Result
 
 - The correlation between Study_Hours and Marks is approximately 0.99.
 - This indicates a very strong positive linear relationship.
@@ -925,7 +925,7 @@ Example:
 df.corr(method='spearman')
 ```
 
-### 8. Applications of Correlation
+#### 8. Applications of Correlation
 
 1. Used to identify relationships between variables.
 2. Helps in statistical data analysis.
@@ -933,21 +933,21 @@ df.corr(method='spearman')
 4. Useful in business and financial analysis.
 5. Used in machine learning and data science.
 
-### 9. Conclusion
+#### 9. Conclusion
 
 Correlation in Pandas is calculated using the `corr()` function. It helps measure the strength and direction of the relationship between numerical variables. It is useful for understanding relationships and analyzing datasets.
 
 ---
 
-# Q2. Explain statistical functions in Pandas, such as sum(), mean(), median(), mode(), min(), max(), count(), std(), and describe(), with examples.
+### Q2. Explain statistical functions in Pandas, such as sum(), mean(), median(), mode(), min(), max(), count(), std(), and describe(), with examples.
 
-### 1. Introduction
+#### 1. Introduction
 
 Statistical functions in Pandas are built-in functions used to perform mathematical and statistical calculations on numerical data.
 
 These functions help calculate totals, averages, minimum values, maximum values, standard deviation and other statistical information.
 
-### 2. Important Statistical Functions
+#### 2. Important Statistical Functions
 
 | Function | Description |
 |---|---|
@@ -961,7 +961,7 @@ These functions help calculate totals, averages, minimum values, maximum values,
 | `std()` | Calculates standard deviation. |
 | `describe()` | Provides a statistical summary. |
 
-### 3. Example of Statistical Functions
+#### 3. Example of Statistical Functions
 
 ```python
 import pandas as pd
@@ -1006,7 +1006,7 @@ min       60.000000
 max      100.000000
 ```
 
-### 4. Explanation of Statistical Functions
+#### 4. Explanation of Statistical Functions
 
 **1. sum():**
 
@@ -1073,7 +1073,7 @@ It provides a summary of statistical information such as count, mean, standard d
 df['Marks'].describe()
 ```
 
-### 5. Advantages of Statistical Functions
+#### 5. Advantages of Statistical Functions
 
 1. Used to analyze numerical datasets.
 2. Helps calculate average performance.
@@ -1081,21 +1081,21 @@ df['Marks'].describe()
 4. Helps understand data distribution.
 5. Useful in business, education and scientific research.
 
-### 6. Conclusion
+#### 6. Conclusion
 
 Statistical functions in Pandas make numerical data analysis easier. Functions such as sum(), mean(), median(), min(), max(), std() and describe() help calculate and understand important statistical information from datasets.
 
 ---
 
-# Q3. Explain the different ways to sort data in Pandas. Describe sort_values() and sort_index() with examples.
+### Q3. Explain the different ways to sort data in Pandas. Describe sort_values() and sort_index() with examples.
 
-### 1. Introduction
+#### 1. Introduction
 
 Sorting is the process of arranging data in a particular order, such as ascending or descending order.
 
 Pandas provides different functions to sort data in a DataFrame. The two important functions are `sort_values()` and `sort_index()`.
 
-### 2. Different Ways to Sort Data
+#### 2. Different Ways to Sort Data
 
 Pandas supports the following sorting operations:
 
@@ -1104,7 +1104,7 @@ Pandas supports the following sorting operations:
 3. Sorting by row index.
 4. Sorting by column labels.
 
-### 3. sort_values() Function
+#### 3. sort_values() Function
 
 The `sort_values()` function is used to sort a DataFrame according to the values of one or more columns.
 
@@ -1120,7 +1120,7 @@ df.sort_values(by, ascending=True)
 - `ascending=True`: Sorts data in ascending order.
 - `ascending=False`: Sorts data in descending order.
 
-### 4. Example of sort_values()
+#### 4. Example of sort_values()
 
 ```python
 import pandas as pd
@@ -1175,7 +1175,7 @@ df.sort_values(
 
 This sorts marks in descending order and names in ascending order when marks are equal.
 
-### 5. sort_index() Function
+#### 5. sort_index() Function
 
 The `sort_index()` function is used to sort a DataFrame according to its index labels instead of its actual data values.
 
@@ -1192,7 +1192,7 @@ df.sort_index(axis=0, ascending=True)
 - `ascending=True`: Sorts in ascending order.
 - `ascending=False`: Sorts in descending order.
 
-### 6. Example of sort_index()
+#### 6. Example of sort_index()
 
 ```python
 import pandas as pd
@@ -1224,7 +1224,7 @@ print(result)
 - The `sort_index()` function arranges the rows according to their index labels.
 - The resulting DataFrame displays rows in ascending index order.
 
-### 7. Difference Between sort_values() and sort_index()
+#### 7. Difference Between sort_values() and sort_index()
 
 | Basis | sort_values() | sort_index() |
 |---|---|---|
@@ -1234,7 +1234,7 @@ print(result)
 | Example | `df.sort_values('Marks')` | `df.sort_index()` |
 | Usage | Arrange students by marks. | Arrange records by index. |
 
-### 8. Advantages of Sorting
+#### 8. Advantages of Sorting
 
 1. Organizes data in a proper order.
 2. Makes searching and comparison easier.
@@ -1242,15 +1242,15 @@ print(result)
 4. Improves data readability.
 5. Useful in data analysis and reporting.
 
-### 9. Conclusion
+#### 9. Conclusion
 
 Sorting is an important operation in Pandas. The `sort_values()` function arranges data according to column values, whereas `sort_index()` arranges data according to index labels. Both functions make data organization and analysis easier.
 
 ---
 
-# Q4. What are window functions in Pandas? Explain rolling, expanding, and exponentially weighted window functions with examples.
+### Q4. What are window functions in Pandas? Explain rolling, expanding, and exponentially weighted window functions with examples.
 
-### 1. Introduction
+#### 1. Introduction
 
 Window functions in Pandas are used to perform calculations on a specific group or window of data points.
 
@@ -1262,7 +1262,7 @@ Pandas provides three main types of window functions:
 2. Expanding Window Functions.
 3. Exponentially Weighted Window Functions.
 
-### 2. Rolling Window Functions
+#### 2. Rolling Window Functions
 
 **Definition:**
 
@@ -1323,7 +1323,7 @@ Calculations:
 3. Time-series analysis.
 4. Identifying short-term trends.
 
-### 3. Expanding Window Functions
+#### 3. Expanding Window Functions
 
 **Definition:**
 
@@ -1380,7 +1380,7 @@ Calculations:
 3. Financial data analysis.
 4. Analyzing long-term trends.
 
-### 4. Exponentially Weighted Window Functions (EWM)
+#### 4. Exponentially Weighted Window Functions (EWM)
 
 **Definition:**
 
@@ -1436,7 +1436,7 @@ dtype: float64
 3. Time-series data analysis.
 4. Monitoring changing trends.
 
-### 5. Difference Between Rolling, Expanding and EWM Functions
+#### 5. Difference Between Rolling, Expanding and EWM Functions
 
 | Basis | Rolling | Expanding | EWM |
 |---|---|---|---|
@@ -1447,7 +1447,7 @@ dtype: float64
 | Example | Moving average. | Cumulative average. | Exponential moving average. |
 | Usage | Short-term trends. | Overall trends. | Smooth and responsive trends. |
 
-### 6. Advantages of Window Functions
+#### 6. Advantages of Window Functions
 
 1. Helps analyze time-series data.
 2. Calculates moving and cumulative averages.
@@ -1455,6 +1455,6 @@ dtype: float64
 4. Useful for financial and stock market analysis.
 5. Helps smooth irregular data.
 
-### 7. Conclusion
+#### 7. Conclusion
 
 Window functions are important features of Pandas used to perform calculations over a group of observations. Rolling functions use a fixed-size window, expanding functions use all previous observations, and exponentially weighted functions give more importance to recent observations. These functions are widely used in time-series analysis and data science.
