@@ -1,3 +1,27 @@
+### Unit IV: Important Questions
+
+1. Explain pandas Series and DataFrame, their characteristics, and their differences with suitable examples.
+
+2. What is a pandas DataFrame? Explain how to create an empty DataFrame and create a DataFrame from lists and Series.
+
+3. Explain categorical data in pandas. How do you create and work with categorical data? Give a suitable example.
+
+4. Explain row-wise and column-wise operations in pandas. Describe how to apply functions to rows, columns, and individual elements.
+
+5. How do you drop rows and columns from a pandas DataFrame? Explain with examples.
+
+6. Explain how to read data from and write data to textual files using pandas. Give examples.
+
+7. How do you compute correlation in pandas? Explain with a suitable example and interpret the result.
+
+8. **Explain statistical functions in pandas, such as `sum()`, `mean()`, `median()`, `mode()`, `min()`, `max()`, `count()`, `std()`, and `describe()`, with examples.
+
+9. **Explain the different ways to sort data in pandas. Describe `sort_values()` and `sort_index()` with examples.**
+
+10. **What are window functions in pandas? Explain rolling, expanding, and exponentially weighted window functions with examples.**
+
+परीक्षा के लिए हर प्रश्न की **definition, मुख्य points और छोटा code example** तैयार करें। इससे आपके भेजे PYQs में दिखे Unit IV के सभी मुख्य topics cover हो जाते हैं, हालांकि परीक्षा में सवालों की गारंटी नहीं दी जा सकती।
+
 ### Q1) Difference Between NumPy and Pandas.
 
 #### 1. Introduction
@@ -75,98 +99,82 @@ Pandas is built on top of NumPy and uses NumPy functionality internally for many
 
 In conclusion, NumPy is mainly used for numerical computations and array operations, whereas Pandas is used for data manipulation and analysis. Both libraries are important tools in Python programming and data science.
 
-### Pandas DataFrame
 
-#### 1. Definition of Pandas DataFrame
+### que 2) Explain Pandas Series and DataFrame, their characteristics, and their differences with suitable examples.
 
-A Pandas DataFrame is a two-dimensional, size-mutable and labeled data structure in Python. It consists of rows and columns and can store different types of data such as integers, strings and floating-point values.
+#### 1. Introduction
 
-It is similar to an Excel spreadsheet or a database table.
+Pandas is an open-source Python library used for data manipulation and analysis. It provides two important data structures: Series and DataFrame. Both are used to store and manage data efficiently.
 
-**Main Features of DataFrame:**
+#### 2. Pandas Series
 
-1. It contains rows and columns.
-2. It supports different data types.
-3. Each row and column has labels.
-4. Data can be added, deleted and modified.
-5. It is used for data analysis and manipulation.
+**Definition:**
 
-#### 2. Can We Create an Empty DataFrame?
+A Pandas Series is a one-dimensional labeled data structure that can store data of different types. It consists of data values and their associated index labels.
 
-Yes, we can create an empty DataFrame in Pandas using the `pd.DataFrame()` constructor without passing any data.
+**Characteristics of Series:**
 
-**Syntax:**
+1. It is a one-dimensional data structure.
+2. It contains a sequence of data values.
+3. Each element has an associated index label.
+4. It can store integers, strings, floating-point values, etc.
+5. It supports indexing, slicing and mathematical operations.
+
+**Example of Pandas Series:**
 
 ```python
 import pandas as pd
 
-df = pd.DataFrame()
-print(df)
+marks = pd.Series([85, 90, 78])
+
+print(marks)
 ```
 
 **Output:**
 
 ```text
-Empty DataFrame
-Columns: []
-Index: []
-```
-
-An empty DataFrame contains no rows and no columns. We can add data to it later.
-
-#### 3. Creating a DataFrame from Lists
-
-We can create a DataFrame from Python lists using the `pd.DataFrame()` function.
-
-**Example:**
-
-```python
-import pandas as pd
-
-data = [
-    ['Aman', 85],
-    ['Rahul', 90],
-    ['Ravi', 78]
-]
-
-df = pd.DataFrame(data, columns=['Name', 'Marks'])
-
-print(df)
-```
-
-**Output:**
-
-```text
-    Name  Marks
-0   Aman     85
-1  Rahul     90
-2   Ravi     78
+0    85
+1    90
+2    78
+dtype: int64
 ```
 
 **Explanation:**
 
 - First, we import the Pandas library.
-- A list containing students' names and marks is created.
-- The `pd.DataFrame()` function converts the list into a DataFrame.
-- The `columns` parameter assigns column names.
-- Finally, the DataFrame is displayed.
+- We create a Series using `pd.Series()`.
+- The values 85, 90 and 78 are stored in the Series.
+- By default, Pandas assigns index labels starting from 0.
+- Finally, we print the Series.
 
-#### 4. Creating a DataFrame from Series
+#### 3. Pandas DataFrame
 
-A Series is a one-dimensional labeled data structure in Pandas. We can combine multiple Series to create a DataFrame.
+**Definition:**
 
-**Example:**
+A Pandas DataFrame is a two-dimensional, size-mutable and labeled data structure. It consists of rows and columns and can store different data types in different columns.
+
+It is similar to an Excel spreadsheet or a database table.
+
+**Characteristics of DataFrame:**
+
+1. It is a two-dimensional data structure.
+2. It consists of rows and columns.
+3. Each row and column has an index or label.
+4. Different columns can store different data types.
+5. It supports data manipulation, filtering and analysis.
+6. We can add, delete and modify rows and columns.
+
+**Example of Pandas DataFrame:**
 
 ```python
 import pandas as pd
 
-name = pd.Series(['Aman', 'Rahul', 'Ravi'])
-marks = pd.Series([85, 90, 78])
+data = {
+    'Name': ['Aman', 'Rahul', 'Ravi'],
+    'Marks': [85, 90, 78]
+}
 
-df = pd.DataFrame({
-    'Name': name,
-    'Marks': marks
-})
+df = pd.DataFrame(data)
 
 print(df)
 ```
@@ -182,21 +190,30 @@ print(df)
 
 **Explanation:**
 
-- First, we create two Series: `name` and `marks`.
-- Each Series contains labeled data.
-- Both Series are combined using the `pd.DataFrame()` function.
-- The resulting DataFrame contains two columns: Name and Marks.
+- First, we create a dictionary containing student names and marks.
+- The `pd.DataFrame()` function converts the dictionary into a DataFrame.
+- The DataFrame contains two columns: Name and Marks.
+- Finally, we print the DataFrame.
 
-Note: Pandas aligns Series data according to their index labels.
+#### 4. Differences Between Series and DataFrame
 
-#### 5. Applications of Pandas DataFrame
+| Basis | Series | DataFrame |
+|---|---|---|
+| 1. Dimension | One-dimensional (1D). | Two-dimensional (2D). |
+| 2. Structure | Contains a single sequence of values. | Contains rows and columns. |
+| 3. Data Storage | Generally stores one data type. | Different columns can store different data types. |
+| 4. Labels | Has index labels. | Has row index and column labels. |
+| 5. Creation | Created using `pd.Series()`. | Created using `pd.DataFrame()`. |
+| 6. Data Representation | Similar to a single column. | Similar to an Excel spreadsheet. |
+| 7. Complexity | Simple data structure. | More complex data structure. |
+| 8. Usage | Used to store one-dimensional data. | Used to store and analyze tabular data. |
 
-1. Used to store and organize structured data.
-2. Used for data cleaning and data manipulation.
-3. Used to analyze large datasets.
-4. Used in machine learning and data science.
-5. Used to read and write CSV and Excel files.
+#### 5. Relationship Between Series and DataFrame
+
+A DataFrame is a collection of Series objects. Each column of a DataFrame can be treated as an individual Series.
+
+For example, in a student DataFrame, the Name column and Marks column are separate Series.
 
 #### 6. Conclusion
 
-A Pandas DataFrame is an important data structure used for handling tabular data in Python. We can create a DataFrame from lists, Series, dictionaries and other data sources. We can also create an empty DataFrame and add data to it later.
+Pandas Series and DataFrame are important data structures used in Python for data handling and analysis. Series is used for one-dimensional data, whereas DataFrame is used for two-dimensional tabular data. Both are widely used in data science and machine learning.
