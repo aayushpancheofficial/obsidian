@@ -14,11 +14,11 @@
 
 7. How do you compute correlation in pandas? Explain with a suitable example and interpret the result.
 
-8. **Explain statistical functions in pandas, such as `sum()`, `mean()`, `median()`, `mode()`, `min()`, `max()`, `count()`, `std()`, and `describe()`, with examples.
+8. Explain statistical functions in pandas, such as `sum()`, `mean()`, `median()`, `mode()`, `min()`, `max()`, `count()`, `std()`, and `describe()`, with examples.
 
-9. **Explain the different ways to sort data in pandas. Describe `sort_values()` and `sort_index()` with examples.**
+9. Explain the different ways to sort data in pandas. Describe `sort_values()` and `sort_index()` with examples.
 
-10. **What are window functions in pandas? Explain rolling, expanding, and exponentially weighted window functions with examples.**
+10. What are window functions in pandas? Explain rolling, expanding, and exponentially weighted window functions with examples.
 
 ### Q1) Difference Between NumPy and Pandas.
 
