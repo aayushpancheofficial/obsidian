@@ -20,8 +20,6 @@
 
 10. **What are window functions in pandas? Explain rolling, expanding, and exponentially weighted window functions with examples.**
 
-परीक्षा के लिए हर प्रश्न की **definition, मुख्य points और छोटा code example** तैयार करें। इससे आपके भेजे PYQs में दिखे Unit IV के सभी मुख्य topics cover हो जाते हैं, हालांकि परीक्षा में सवालों की गारंटी नहीं दी जा सकती।
-
 ### Q1) Difference Between NumPy and Pandas.
 
 #### 1. Introduction
