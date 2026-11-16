@@ -350,7 +350,7 @@ print(df.dtypes)
 Categorical data in Pandas is used to represent data in the form of predefined categories or groups. It can be created using `pd.Categorical()` or `astype('category')`. It is useful for data organization, memory efficiency and data analysis.
 
 ### Q4) Explain Row-wise and Column-wise Operations in Pandas. Describe how to apply functions to rows, columns, and individual elements.
-# Row-wise and Column-wise Operations in Pandas
+ Row-wise and Column-wise Operations in Pandas
 
 #### 1. Introduction
 
@@ -532,7 +532,8 @@ print(result)
 Row-wise and column-wise operations are important features of Pandas. The `apply()` function is used to apply functions along rows and columns, while `DataFrame.map()` is used to apply functions to individual elements. These operations make data manipulation and analysis easier and more efficient.
 
 ### Q5) How do you drop rows and columns from a pandas DataFrame? Explain with examples.
-# Dropping Rows and Columns in Pandas DataFrame
+
+ Dropping Rows and Columns in Pandas DataFrame
 
 #### 1. Introduction
 
