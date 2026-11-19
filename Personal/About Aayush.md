@@ -159,13 +159,19 @@ Because in the end, real happiness comes from <span style="color:red">growth, re
         title="Video 4" allowfullscreen></iframe>
     </td>
   </tr>
-  <tr>
-    <td width="50%">
-      <iframe width="100%" height="240"
-        src="https://www.youtube.com/embed/S8F9lCboB_8"
-        title="Video 5" allowfullscreen></iframe>
-    </td>
-  </tr>
+ 
+ <tr>
+  <td width="50%">
+    <iframe width="100%" height="240"
+      src="https://www.youtube.com/embed/ZaJnbGEXWQk"
+      title="Video 6" allowfullscreen></iframe>
+  </td>
+  <td width="50%">
+    <iframe width="100%" height="240"
+      src="https://www.youtube.com/embed/FSCgfI3OG7s"
+      title="Video 7" allowfullscreen></iframe>
+  </td>
+</tr>
 </table>
 
 <p align="center">
